@@ -28,8 +28,8 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
 	res.render('index');
 });
-app.use('/api/auth', auth);
-app.use('/api/users', users);
+app.use('auth', auth);
+app.use('/users', users);
 
 const port = process.env.port || 3000;
 app.listen(port, () => {
