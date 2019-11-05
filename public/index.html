@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
+    <script src="JS/formcontrol.js"></script>
+    <title>Home-INWILD</title>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <a href="index.html" class="logo">INWILD.</a>
+        <div class="menu-items">
+            <a href="explorepage.html" class="LT">Explore</a>
+            <a href="datapage.html" class="LT">Data</a>
+            <a class="LT" onclick="openForm1()">Login/Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="big-container">
+        <div class="left-container">
+            <img src="ASSETS/left.svg" alt="#" class="group1">
+        </div>
+        <div id="right-container1" class="right-container1">
+            <div class="first-container">
+                <div class="text-box1">
+                    <h3>Protected Areas of India</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non a veritatis quos? Ut aperiam sequi
+                        voluptatem,
+
+                    </p>
+                </div>
+                <div class="image1">
+                    <img src="ASSETS/india.svg" alt="#" class="group1">
+                </div>
+            </div>
+            <div class="second-container">
+                <div class="text-box2">
+                    <h3>Popular Statistics</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non a veritatis quos? Ut aperiam sequi
+                        voluptatem,
+                    </p>
+                </div>
+                <div class="image2">
+                    <img src="ASSETS/stat.svg" alt="#" class="group1">
+                </div>
+            </div>
+            <div class="third-container">
+                <div class="text-box3">
+                    <h3>Research Papers</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non a veritatis quos? Ut aperiam sequi
+                        voluptatem,</p>
+                </div>
+                <div class="image3">
+                    <img src="ASSETS/paper.svg" alt="#" class="group1">
+                </div>
+            </div>
+            <div class="fourth-container">
+                <div class="text-box4">
+                    <h3>Goverment Policy Documents</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non a veritatis quos? Ut aperiam sequi
+                        voluptatem,</p>
+                </div>
+                <div class="image4">
+                    <img src="ASSETS/doc.svg" alt="#" class="group1">
+                </div>
+            </div>
+        </div>
+        <div id="right-container3" class="right-container3">
+            <span class="closebtn" onclick="closeForm2()" title="Close Form"> &#215 </span>
+            <div class="form-container">
+                <h3 class="sign">Sign Up</h3>
+                <form class="form1" id="signUpForm">
+                    <input class="fn " id='su-name' type="text" name="name" placeholder="Name">
+                    <input class="un " id='su-username' type="text" name="username" placeholder="Username">
+                    <input class="pass" id='su-password' type="password" name="password" placeholder="Password">
+                    <input class="email" id='su-email' type="email" name="email" placeholder="Email ID">
+                    <input class="designation " id='su-designation' type="text" name="designation"
+                        placeholder="Designation">
+                    <input type="submit" class="submit" value="Sign Up">
+                    <p id="Errormessage"></p>
+                    <p class="signup"><a href="#" onclick="openForm3()">Back</a></p>
+                </form>
+            </div>
+        </div>
+        <div id="right-container2" class="right-container2">
+            <span class="closebtn" onclick="closeForm1()" title="Close Form"> &#215 </span>
+            <div class="form-container">
+                <h3 class="sign">Sign In</h3>
+                <form class="form1">
+                    <input class="un " type="text" placeholder="Username">
+                    <input class="pass" type="password" placeholder="Password">
+                    <input type="submit" class="submit" value="Sign In" onclick="closeForm1()">
+                    <p class="signup"><a href="#" onclick="openForm2()">To create an account, please Sign Up</a></p>
+                   
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p class="Copyright"><b>&copy;</b> designed by shyam & suchitte.</p>
+    </footer>
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script>
+
+        const signUpForm = document.getElementById('signUpForm');
+        signUpForm.onsubmit = e => {
+            $('#Errormessage').html("");
+            e.preventDefault();
+
+            const name = document.getElementById('su-name').value;
+            const username = document.getElementById('su-username').value;
+            const password = document.getElementById('su-password').value;
+            const email = document.getElementById('su-email').value;
+            const designation = document.getElementById('su-designation').value;
+        $.ajax({
+            type: 'POST',
+            url: "http://localhost:3000/users",
+            data: JSON.stringify({
+                "name": name,
+                "password": password,
+                "username": username,
+                "designation": designation,
+                "email": email
+                 }),
+            error: function(e) {
+                $('#Errormessage').html(e.responseText);
+            },
+            success:function(e) {
+                $('#Errormessage').html('Sign up scessfull');
+            },
+            dataType: "json",
+            contentType: "application/json"
+        });
+        return false;
+    }
+    </script>
+   
+</body>
+
+</html>
