@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const users = require('./routes/users');
 const auth = require('./routes/auth');
+const reports = require('./routes/reports');
 
 require('dotenv').config();
 
@@ -17,7 +18,11 @@ mongoose
 		useUnifiedTopology: true
 	})
 	.then(() => {
-		console.log(`Successfully connected to database `);
+		// listen only if connected to mongoDb
+		app.listen(port, () => {
+			console.log('Listening on port ' + port);
+			console.log('Connected to MongoDb');
+		});
 	});
 
 app.use(express.static(__dirname + '/public'));
@@ -30,8 +35,6 @@ app.get('/', (req, res) => {
 });
 app.use('auth', auth);
 app.use('/users', users);
+app.use('/reports', reports);
 
 const port = process.env.port || 3000;
-app.listen(port, () => {
-	console.log('Listening on port ' + port);
-});
