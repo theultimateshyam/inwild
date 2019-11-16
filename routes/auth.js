@@ -24,7 +24,10 @@ router.post('/', async (req, res) => {
 	if (!validpassword)
 		return res.status(400).send({ error: 'Invalid User name or Password' });
 
-	res.send(jwt.sign({ _id: user._id }, process.env.jwtPrivateKey));
+	const token = user.generateAuthToken();
+	res.header('x-auth-token', token).send(
+		jwt.sign({ _id: user._id }, process.env.jwtPrivateKey)
+	);
 });
 
 function validateUser(req) {

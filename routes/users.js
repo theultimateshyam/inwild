@@ -3,6 +3,7 @@ const _ = require('lodash');
 const { User, validateUser } = require('../models/user');
 const bcrypt = require('bcrypt');
 const auth = require('../middleware/auth');
+
 router.get('/', auth, async (req, res) => {
 	const users = await User.find();
 	res.send(users);
@@ -29,7 +30,7 @@ router.post('/', async (req, res) => {
 	});
 	await newuser.save();
 
-	const token = newuser.generateAuthToken();
+	const token = user.generateAuthToken();
 	res.header('x-auth-token', token).send(
 		_.pick(newuser, ['_id', 'isAdmin', 'name'])
 	);

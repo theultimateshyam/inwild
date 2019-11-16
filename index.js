@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
 	res.render('index');
 });
-app.use('auth', auth);
+app.use('/auth', auth);
 app.use('/users', users);
 app.use('/reports', reports);
 
