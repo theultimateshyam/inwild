@@ -8,7 +8,6 @@ const jwt = require('jsonwebtoken');
 
 router.post('/', async (req, res) => {
 	const { error } = validateUser(req.body);
-
 	if (error) return res.status(400).send({ error: error.details[0].message });
 
 	let user = await User.findOne({ email: req.body.email });
@@ -27,7 +26,8 @@ router.post('/', async (req, res) => {
 	const token = user.generateAuthToken();
 	res.cookie('AuthToken', token, { httpOnly: true })
 		.header('x-auth-token', token)
-		.send(jwt.sign({ _id: user._id }, process.env.jwtPrivateKey));
+		.send(user._id)
+		.status(200);
 });
 
 function validateUser(req) {

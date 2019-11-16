@@ -69,6 +69,9 @@
 				</div>
 			</div>
 		</div>
+
+
+
 		<div id="right-container3" class="right-container3">
 			<span class="closebtn" onclick="closeForm2()" title="Close Form"> &#215 </span>
 			<div class="form-container" id="form-container">
@@ -86,22 +89,22 @@
 				</form>
 			</div>
 		</div>
+
 		<div id="right-container2" class="right-container2">
 			<span class="closebtn" onclick="closeForm1()" title="Close Form"> &#215 </span>
 			<div class="form-container">
 				<h3 class="sign">Sign In</h3>
-				<form class="form1" id="sign-in">
+				<form class="form1" id="signin">
 					<input class="un " id='si-email' type="email" name="email" placeholder="Email ID">
 					<input class="pass" id='si-password' type="password" name="password" placeholder="Password">
 
 					<input type="submit" class="submit" value="Sign In">
-					<p id="si-Errormessage" class="error"></p>
+					<p id="siErrormessage" class="error"></p>
 					<p class="signup"><a href="#" onclick="openForm2()">To create an account, please Sign Up</a></p>
 
 				</form>
 			</div>
 		</div>
-
 	</main>
 
 	<footer>
@@ -147,12 +150,9 @@
 			return false;
 		}
 
-	</script>
-
-	<script>
-		const signUpForm = document.getElementById('sign-in');
-		signUpForm.onsubmit = e => {
-			$('#si-Errormessage').html("");
+		const siginform = document.getElementById('signin');
+		siginform.onsubmit = e => {
+			$('#siErrormessage').html("");
 			e.preventDefault();
 
 			const password = document.getElementById('si-password').value;
@@ -166,13 +166,13 @@
 					"email": email
 				}),
 				error: function (e) {
-					$('#si-Errormessage').html(e.responseText);
-					document.getElementById("sign-in").reset();
+					$('#siErrormessage').html(e.responseText);
+					document.getElementById("signin").reset();
 					//$(".form-container").effect("shake");
 				},
 				success: function (e) {
-					$('#si-Errormessage').html('Sign In successfull');
-					document.getElementById("sign-in").reset();
+					$('#siErrormessage').html('Sign In successfull');
+					document.getElementById("signin").reset();
 				},
 				dataType: "json",
 				contentType: "application/json"
