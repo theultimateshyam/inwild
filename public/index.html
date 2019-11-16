@@ -71,7 +71,7 @@
 		</div>
 		<div id="right-container3" class="right-container3">
 			<span class="closebtn" onclick="closeForm2()" title="Close Form"> &#215 </span>
-			<div class="form-container">
+			<div class="form-container" id="form-container">
 				<h3 class="sign">Sign Up</h3>
 				<form class="form1" id="signUpForm">
 					<input class="fn " id='su-name' type="text" name="name" placeholder="Name">
@@ -81,7 +81,7 @@
 					<input class="designation " id='su-designation' type="text" name="designation"
 						placeholder="Designation">
 					<input type="submit" class="submit" value="Sign Up">
-					<p id="Errormessage"></p>
+					<p id="Errormessage" class="error"></p>
 					<p class="signup"><a href="#" onclick="openForm3()">Back</a></p>
 				</form>
 			</div>
@@ -132,9 +132,12 @@
 				}),
 				error: function (e) {
 					$('#Errormessage').html(e.responseText);
+					document. getElementById("signUpForm"). reset();
+					//$(".form-container").effect("shake");
 				},
 				success: function (e) {
-					$('#Errormessage').html('Sign up successfull');
+					$('#Errormessage').html('Sign up scessfull');
+					document. getElementById("signUpForm"). reset();
 				},
 				dataType: "json",
 				contentType: "application/json"
