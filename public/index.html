@@ -90,10 +90,12 @@
 			<span class="closebtn" onclick="closeForm1()" title="Close Form"> &#215 </span>
 			<div class="form-container">
 				<h3 class="sign">Sign In</h3>
-				<form class="form1">
-					<input class="un " type="text" placeholder="Username">
-					<input class="pass" type="password" placeholder="Password">
-					<input type="submit" class="submit" value="Sign In" onclick="closeForm1()">
+				<form class="form1" id="sign-in">
+					<input class="un " id='si-email' type="email" name="email" placeholder="Email ID">
+					<input class="pass" id='si-password' type="password" name="password" placeholder="Password">
+
+					<input type="submit" class="submit" value="Sign In">
+					<p id="si-Errormessage" class="error"></p>
 					<p class="signup"><a href="#" onclick="openForm2()">To create an account, please Sign Up</a></p>
 
 				</form>
@@ -132,12 +134,45 @@
 				}),
 				error: function (e) {
 					$('#Errormessage').html(e.responseText);
-					document. getElementById("signUpForm"). reset();
+					document.getElementById("signUpForm").reset();
 					//$(".form-container").effect("shake");
 				},
 				success: function (e) {
 					$('#Errormessage').html('Sign up scessfull');
-					document. getElementById("signUpForm"). reset();
+					document.getElementById("signUpForm").reset();
+				},
+				dataType: "json",
+				contentType: "application/json"
+			});
+			return false;
+		}
+
+	</script>
+
+	<script>
+		const signUpForm = document.getElementById('sign-in');
+		signUpForm.onsubmit = e => {
+			$('#si-Errormessage').html("");
+			e.preventDefault();
+
+			const password = document.getElementById('si-password').value;
+			const email = document.getElementById('si-email').value;
+
+			$.ajax({
+				type: 'POST',
+				url: "http://localhost:3000/auth",
+				data: JSON.stringify({
+					"password": password,
+					"email": email
+				}),
+				error: function (e) {
+					$('#si-Errormessage').html(e.responseText);
+					document.getElementById("sign-in").reset();
+					//$(".form-container").effect("shake");
+				},
+				success: function (e) {
+					$('#si-Errormessage').html('Sign In successfull');
+					document.getElementById("sign-in").reset();
 				},
 				dataType: "json",
 				contentType: "application/json"

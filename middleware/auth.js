@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 function auth(req, res, next) {
-	const token = req.header('x-auth-token');
+	const token = req.header('x-auth-token') || req.cookies.AuthToken;
 	// user tried brute force stop him right here
 	if (!token)
 		return res

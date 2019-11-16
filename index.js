@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+const cookieParser = require('cookie-parser');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const reports = require('./routes/reports');
@@ -26,7 +26,7 @@ mongoose
 	});
 
 app.use(express.static(__dirname + '/public'));
-
+app.use(cookieParser());
 app.use(cors({ exposedHeaders: ['x-auth-token'] }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

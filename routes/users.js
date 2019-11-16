@@ -31,9 +31,9 @@ router.post('/', async (req, res) => {
 	await newuser.save();
 
 	const token = user.generateAuthToken();
-	res.header('x-auth-token', token).send(
-		_.pick(newuser, ['_id', 'isAdmin', 'name'])
-	);
+	res.cookie('AuthToken', token, { httpOnly: true })
+		.header('x-auth-token', token)
+		.send(_.pick(newuser, ['_id', 'isAdmin', 'name']));
 });
 
 module.exports = router;
