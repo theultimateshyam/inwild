@@ -7,7 +7,8 @@ const auth = require('./routes/auth');
 const reports = require('./routes/reports');
 const medical = require('./routes/medical');
 const animalinput = require('./routes/animalinput');
-
+const admincreate = require('./routes/admincreate');
+const admindelete = require('./routes/admindelete');
 require('dotenv').config();
 
 const app = express();
@@ -40,5 +41,6 @@ app.use('/users', users);
 app.use('/reports', reports);
 app.use('/animalinput', animalinput);
 app.use('/medical', medical);
-
+app.use('/admincreate', admincreate);
+app.use('/admindelete', admindelete);
 const port = process.env.port || 3000;
