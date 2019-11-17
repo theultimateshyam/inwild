@@ -84,7 +84,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 180%;
+  height: 100%;
   background-color: #000033;
 }
 
@@ -223,13 +223,13 @@ body {
   color: white;
 }
 
-.big-container .main-body .left form input[type='submit'] {
+.big-container .main-body .left form .submit {
   margin-top: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   height: 40px;
   color: #fff;
   font-size: 14px;
-  width: 25%;
+  width: 28%;
   padding: none;
   border: none;
   text-align: center;
@@ -237,6 +237,16 @@ body {
   background: -webkit-gradient(linear, left top, right top, from(#32d8ae), to(#7cffcb));
   background: linear-gradient(to right, #32d8ae, #7cffcb);
   cursor: pointer;
+}
+
+.big-container .main-body .left form .button-grp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 footer {
@@ -263,4 +273,4 @@ footer p {
   font-family: 'Raleway', sans-serif;
   padding: 0 0.5rem;
 }
-/*# sourceMappingURL=datainput.css.map */
+/*# sourceMappingURL=datainput-admin.css.map */

@@ -60,7 +60,7 @@ body {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	height: 180%;
+	height: 100%;
 	background-color: #000033;
 
 	.buttons {
@@ -164,20 +164,24 @@ body {
 					transform: translate(-50%, 0);
 					color: white;
 				}
-				input[type='submit'] {
+				.submit { 
 					margin-top: 25px;
-					margin-bottom: 15px;
+                    margin-bottom: 5px;
 					height: 40px;
 					color: #fff;
 					font-size: 14px;
-					width: 25%;
+					width: 28%;
 					padding: none;
 					border: none;
 					text-align: center;
 					border-radius: 10px;
 					background: linear-gradient(to right, #32d8ae, #7cffcb);
 					cursor: pointer;
-				}
+                }
+                .button-grp{
+                    display: flex;
+                    flex-direction: column;
+                }
 			}
 		}
 	}
