@@ -32,9 +32,9 @@
 		<div class="main-body">
 			<div class="left">
 				<h2><b>Medical Data Form</b></h2>
-				<form id="animal-form">
+				<form id="medicalform">
 					<h4>Animal ID</h4>
-					<input type="text" class="org" id="animal-id" placeholder="Animal ID">
+					<input type="text" class="org" id="animalid" placeholder="Animal ID">
 					<h4>Diseases</h4>
 					<input type="text" class="org" id="diseases" placeholder="Diseases/Ailments">
 					<h4>Treatment</h4>
@@ -42,6 +42,7 @@
 					<h4>General Health Description</h4>
 					<input type="text" class="org" id="description" placeholder="Description">
 					<input type="submit" class="submit" value="Enter">
+					<p id="message" class="error" style="color: red;"></p>
 				</form>
 			</div>
 		</div>
@@ -55,3 +56,41 @@
 </body>
 
 </html>
+
+
+<script>
+	const medicalform = document.getElementById('medicalform');
+	medicalform.onsubmit = e => {
+		e.preventDefault();
+		const animalid = document.getElementById('animalid').value;
+		const diseases = document.getElementById('diseases').value;
+		const treatment = document.getElementById('treatment').value;
+		const description = document.getElementById('description').value;
+
+		$.ajax({
+			type: 'POST',
+			url: "http://localhost:3000/medical",
+			data: JSON.stringify({
+				"animalid": animalid,
+				"diseases": diseases,
+				"treatment": treatment,
+				"description": description
+
+			}),
+			error: function (e) {
+				$('#message').html(e.responseText);
+				medicalform.reset();
+				//$(".form-container").effect("shake");
+			},
+			success: function (e) {
+				$('#message').html("Successfully entered");
+				medicalform.reset();
+
+			},
+			dataType: "json",
+			contentType: "application/json"
+		});
+		return false;
+	}
+
+</script>

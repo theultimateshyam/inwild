@@ -32,11 +32,11 @@
 		<div class="main-body">
 			<div class="left">
 				<h2><b>Animal Form</b></h2>
-				<form id="animal-form">
+				<form id="animalform">
 					<h4>Animal ID</h4>
-					<input type="text" class="org" id="animal-id" placeholder="Animal ID">
+					<input type="text" class="org" id="animalid" placeholder="Animal ID">
 					<h4>Animal Name</h4>
-					<input type="text" class="org" id="animal-name" placeholder="Animal Name">
+					<input type="text" class="org" id="animalname" placeholder="Animal Name">
 					<h4>Genus</h4>
 					<input type="text" class="org" id="genus" placeholder="Genus">
 					<h4>Species</h4>
@@ -47,13 +47,16 @@
 					<input type="text" class="org" id="height" placeholder="Height (in cm)">
 					<h4>Length</h4>
 					<input type="text" class="org" id="length" placeholder="Length (in cm)">
-					<h4>Base Color</h4>
-					<input type="text" class="org" id="base-color" placeholder="Base Color">
+					<h4> Color</h4>
+					<input type="text" class="org" id="color" placeholder=" Color">
 					<h4>Age</h4>
 					<input type="text" class="org" id="age" placeholder="Age (in years)">
+					<h4>Sex</h4>
+					<input type="text" class="org" id="sex" placeholder="Sex (M/F)">
 					<h4>Limb Count</h4>
-					<input type="text" class="org" id="limb-count" placeholder="Limb Count">
+					<input type="text" class="org" id="limbcount" placeholder="Limb Count">
 					<input type="submit" class="submit" value="Enter">
+					<p id="message" class="error"></p>
 				</form>
 			</div>
 		</div>
@@ -67,3 +70,56 @@
 </body>
 
 </html>
+
+<script>
+	const animalform = document.getElementById('animalform');
+	animalform.onsubmit = e => {
+		e.preventDefault();
+		const animalid = document.getElementById('animalid').value;
+		const animalname = document.getElementById('animalname').value;
+		const genus = document.getElementById('genus').value;
+		const species = document.getElementById('species').value;
+		const weight = document.getElementById('weight').value;
+		const height = document.getElementById('height').value;
+		const length = document.getElementById('length').value;
+		const color = document.getElementById('color').value;
+		const age = document.getElementById('age').value;
+		const sex = document.getElementById('sex').value;
+		const limbcount = document.getElementById('limbcount').value;
+
+
+
+		$.ajax({
+			type: 'POST',
+			url: "http://localhost:3000/animalinput",
+			data: JSON.stringify({
+				"animalid": animalid,
+				"animalname": animalname,
+				"genus": genus,
+				"species": species,
+				"weight": weight,
+				"height": height,
+				"lengthh": length,
+				"color": color,
+				"age": age,
+				"sex": sex,
+				"limbcount": limbcount
+
+			}),
+			error: function (e) {
+				$('#message').html("Could not enter the data/possible duplicate exists");
+				document.getElementById("animalform").reset();
+				//$(".form-container").effect("shake");
+			},
+			success: function (e) {
+				$('#message').html('Successfully Entered');
+				document.getElementById("animalform").reset();
+
+			},
+			dataType: "json",
+			contentType: "application/json"
+		});
+		return false;
+	}
+
+</script>

@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const reports = require('./routes/reports');
+const medical = require('./routes/medical');
+const animalinput = require('./routes/animalinput');
 
 require('dotenv').config();
 
@@ -36,5 +38,7 @@ app.get('/', (req, res) => {
 app.use('/auth', auth);
 app.use('/users', users);
 app.use('/reports', reports);
+app.use('/animalinput', animalinput);
+app.use('/medical', medical);
 
 const port = process.env.port || 3000;

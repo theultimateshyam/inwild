@@ -1,4 +1,3 @@
-require('dotenv').config();
 const mysql = require('mysql');
 
 var pool = mysql.createPool({
@@ -9,5 +8,4 @@ var pool = mysql.createPool({
 	database: 'inwild'
 	// insecureAuth: true
 });
-console.log('Connected to mysql DB');
 module.exports = pool;

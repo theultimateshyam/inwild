@@ -32,19 +32,31 @@
 		<div class="main-body">
 			<div class="left">
 				<h2><b>Admin Control Form</b></h2>
-				<form id="animal-form">
+				<form id="admincreate">
 					<h4>Officer Email-ID</h4>
-					<input type="text" class="org" id="email-id" placeholder="Email ID">
+					<input type="text" class="org" id="emailid" placeholder="Email ID">
 					<h4>Designation Level</h4>
-                    <input type="text" class="org" id="designation" placeholder="Desination">
-                    <div class="button-grp">
-                        <input type="submit" class="submit" value="Create Officer">
-                        <input type="submit" class="submit" value="Delete Officer">
-                    </div>
-                    </form>
+					<input type="text" class="org" id="designation" placeholder="Desination">
+					<div class="button-grp">
+						<input type="submit" class="submit" value="Create Officer">
+						<p id="message" class="error" style="color: red;"></p>
+
 				</form>
+
+
 			</div>
+
+			<div class="left"></div>
+			<form id="admindelete">
+				<h4>Officer Email-ID</h4>
+				<input type="text" class="org" id="email-id" placeholder="Email ID">
+				<h4>Designation Level</h4>
+				<input type="submit" class="submit" value="Delete Officer">
+				<p id="message" class="error" style="color: red;"></p>
+			</form>
 		</div>
+		</div>
+
 	</main>
 
 	<footer>
@@ -55,3 +67,69 @@
 </body>
 
 </html>
+
+
+<script>
+	const admincreate = document.getElementById('admincreate');
+	admincreate.onsubmit = e => {
+		$('#Errormessage').html("");
+		e.preventDefault();
+
+		const emailid = document.getElementById('emailid').value;
+		const username = document.getElementById('designation').value;
+		$.ajax({
+			type: 'POST',
+			url: "http://localhost:3000/createuser",
+			data: JSON.stringify({
+				"name": name,
+				"password": password,
+				"username": username,
+				"designation": designation,
+				"email": email
+			}),
+			error: function (e) {
+				$('#Errormessage').html(e.responseText);
+				admincreate.reset();
+				//$(".form-container").effect("shake");
+			},
+			success: function (e) {
+				$('#Errormessage').html('Sign up scessfull');
+				admincreate.reset();
+			},
+			dataType: "json",
+			contentType: "application/json"
+		});
+		return false;
+	}
+
+	const admindelete = document.getElementById('admindelete');
+	admindelete.onsubmit = e => {
+		$('#siErrormessage').html("");
+		e.preventDefault();
+
+		const password = document.getElementById('si-password').value;
+		const email = document.getElementById('si-email').value;
+
+		$.ajax({
+			type: 'POST',
+			url: "http://localhost:3000/auth",
+			data: JSON.stringify({
+				"password": password,
+				"email": email
+			}),
+			error: function (e) {
+				$('#siErrormessage').html(e.responseText);
+				admindelete.reset();
+				//$(".form-container").effect("shake");
+			},
+			success: function (e) {
+				$('#siErrormessage').html('Sign In successfull');
+				admindelete.reset();
+			},
+			dataType: "json",
+			contentType: "application/json"
+		});
+		return false;
+	}
+
+</script>

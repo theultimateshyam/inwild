@@ -190,6 +190,9 @@ body {
 }
 
 .big-container .main-body .left form {
+  border: 1px solid white;
+  border-radius: 1em;
+  padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   height: auto;

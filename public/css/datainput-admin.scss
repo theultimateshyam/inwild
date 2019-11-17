@@ -130,13 +130,16 @@ body {
 			width: 40%;
 			position: absolute;
 			height: 90%;
-			left:50%;
-			transform: translate(-50%,0);
+			left: 50%;
+			transform: translate(-50%, 0);
 			padding: 2%;
 			h2 {
 				color: white;
 			}
 			form {
+				border: 1px solid white;
+				border-radius: 1em;
+				padding: 20px;
 				margin-top: 20px;
 				margin-bottom: 20px;
 				height: auto;
@@ -164,9 +167,9 @@ body {
 					transform: translate(-50%, 0);
 					color: white;
 				}
-				.submit { 
+				.submit {
 					margin-top: 25px;
-                    margin-bottom: 5px;
+					margin-bottom: 5px;
 					height: 40px;
 					color: #fff;
 					font-size: 14px;
@@ -177,11 +180,11 @@ body {
 					border-radius: 10px;
 					background: linear-gradient(to right, #32d8ae, #7cffcb);
 					cursor: pointer;
-                }
-                .button-grp{
-                    display: flex;
-                    flex-direction: column;
-                }
+				}
+				.button-grp {
+					display: flex;
+					flex-direction: column;
+				}
 			}
 		}
 	}
