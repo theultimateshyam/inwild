@@ -103,6 +103,7 @@ html, body{
             height: 2.3rem;
             padding:10px;
             color: white;
+            margin-right: 50px;
             background-color: transparent;
             border-style: solid;
             border-radius: 0.6rem;
@@ -110,6 +111,19 @@ html, body{
             border-color: #9eed85 ;
         }
         .download:hover{
+            border-color: white;
+        }
+        .data-input{
+            height: 2.3rem;
+            padding:10px;
+            color: white;
+            background-color: transparent;
+            border-style: solid;
+            border-radius: 0.6rem;
+            cursor: pointer;
+            border-color: #9eed85 ;
+        }
+        .data-input:hover{
             border-color: white;
         }
         
