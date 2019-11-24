@@ -54,14 +54,21 @@ html, body{
 }
 
 .big-container {
-    
+
     overflow: hidden;
     font-family: 'raleway', sans-serif;
     position: relative;
     display: flex;
     flex-direction: row;
     height: 100%;
-    background-color: #000033;
+	background-color: #000033;
+	.error{
+		text-align: center;
+		color: red;
+		padding-top: 5px;
+		padding-bottom: 10px;
+		font-size: 12px;
+	}
     .left-container {
       width: 50%;
       position: absolute;
@@ -92,16 +99,16 @@ html, body{
           background-color:#FFFFFF;
           border-radius: 20px;
           box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-  
+
           .closebtn{
               position: absolute;
               top: 0px;
               right: 15px;
               font-size: 35px;
               cursor: pointer;
-              color: #000000;  
+              color: #000000;
           }
-  
+
           .sign{
               margin-top: 30px;
               margin-bottom: 30px;
@@ -110,7 +117,7 @@ html, body{
               color: #32D8AE;
               text-decoration: none;
           }
-  
+
           form{
               margin-top: 50px;
               input{
@@ -144,13 +151,7 @@ html, body{
                   background: linear-gradient(to right, #32D8AE, #7CFFCB);
                   cursor: pointer;
               }
-              .error{
-                  text-align: center;
-                  color: red;
-                  padding-top: 5px;
-                  padding-bottom: 10px;
-                  font-size: 12px;
-              }
+
               .signup{
                   text-shadow: 0px 0px 3px rgba(50, 216, 174, 0.12);
                   color: #000000;
@@ -163,11 +164,11 @@ html, body{
                       color: #000;
                       text-decoration: none;
                       font-size: 12px;
-  
+
                   }
               }
           }
-  
+
       }
     .right-container2{
       display:none;
@@ -192,7 +193,7 @@ html, body{
             top: 0px;
             right: 15px;
             font-size: 35px;
-            cursor: pointer;  
+            cursor: pointer;
         }
 
         .form-container .sign{
@@ -315,13 +316,13 @@ html, body{
                 position: relative;
                 color: white;
                 width: 250%;
-                height: 100%;     
+                height: 100%;
                 p{
                     top: 50%;
                     left:50%;
                     width: 85%;
                     transform: translate(0%, 50%);
-                    
+
                 }
                 h3{
                     color: #CBF3F0;
@@ -353,13 +354,13 @@ html, body{
                 position: relative;
                 color: white;
                 width: 250%;
-                height: 100%;     
+                height: 100%;
                 p{
                     top: 50%;
                     left:50%;
                     width: 85%;
                     transform: translate(0%, 50%);
-                    
+
                 }
                 h3{
                     color:#BA1200;
@@ -391,13 +392,13 @@ html, body{
                 position: relative;
                 color: white;
                 width: 250%;
-                height: 100%;     
+                height: 100%;
                 p{
                     top: 50%;
                     left:50%;
                     width: 85%;
                     transform: translate(0%, 50%);
-                    
+
                 }
                 h3{
                     color: #B388EB;

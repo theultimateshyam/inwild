@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
-	<script src="js/formcontrol.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<title>Home-INWILD</title>
 </head>
 
@@ -76,7 +76,7 @@
 			<span class="closebtn" onclick="closeForm2()" title="Close Form"> &#215 </span>
 			<div class="form-container" id="form-container">
 				<h3 class="sign">Sign Up</h3>
-				<form class="form1" id="signUpForm">
+				<form class="form1" id="signUpForm" onSubmit="performSigup(); return false;">
 					<input class="fn " id='su-name' type="text" name="name" placeholder="Name">
 					<input class="un " id='su-username' type="text" name="username" placeholder="Username">
 					<input class="pass" id='su-password' type="password" name="password" placeholder="Password">
@@ -84,7 +84,7 @@
 					<input class="designation " id='su-designation' type="text" name="designation"
 						placeholder="Designation">
 					<input type="submit" class="submit" value="Sign Up">
-					<p id="Errormessage" class="error"></p>
+					<p id="response-su-message" class="error"></p>
 					<p class="signup"><a href="#" onclick="openForm3()">Back</a></p>
 				</form>
 			</div>
@@ -94,12 +94,12 @@
 			<span class="closebtn" onclick="closeForm1()" title="Close Form"> &#215 </span>
 			<div class="form-container">
 				<h3 class="sign">Sign In</h3>
-				<form class="form1" id="signin">
-					<input class="un " id='si-email' type="email" name="email" placeholder="Email ID">
-					<input class="pass" id='si-password' type="password" name="password" placeholder="Password">
+				<form class="form1" id="signin" onSubmit="performSigin(); return false;">
+					<input class="un " id='siemail' type="email" name="email" placeholder="Email ID">
+					<input class="pass" id='sipassword' type="password" name="password" placeholder="Password">
 
 					<input type="submit" class="submit" value="Sign In">
-					<p id="siErrormessage" class="error"></p>
+					<p id="response-si-message" class="error"></p>
 					<p class="signup"><a href="#" onclick="openForm2()">To create an account, please Sign Up</a></p>
 
 				</form>
@@ -111,76 +111,9 @@
 		<p class="Copyright"><b>&copy;</b> designed by shyam & suchitte.</p>
 	</footer>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="js/formcontrol.js"></script>
+	<script src="js/main.js"></script>
 
-	<script>
-		const signUpForm = document.getElementById('signUpForm');
-		signUpForm.onsubmit = e => {
-			$('#Errormessage').html("");
-			e.preventDefault();
-
-			const name = document.getElementById('su-name').value;
-			const username = document.getElementById('su-username').value;
-			const password = document.getElementById('su-password').value;
-			const email = document.getElementById('su-email').value;
-			const designation = document.getElementById('su-designation').value;
-			$.ajax({
-				type: 'POST',
-				url: "http://localhost:3000/users",
-				data: JSON.stringify({
-					"name": name,
-					"password": password,
-					"username": username,
-					"designation": designation,
-					"email": email
-				}),
-				error: function (e) {
-					$('#Errormessage').html(e.responseText);
-					document.getElementById("signUpForm").reset();
-					//$(".form-container").effect("shake");
-				},
-				success: function (e) {
-					$('#Errormessage').html('Sign up scessfull');
-					document.getElementById("signUpForm").reset();
-				},
-				dataType: "json",
-				contentType: "application/json"
-			});
-			return false;
-		}
-
-		const siginform = document.getElementById('signin');
-		siginform.onsubmit = e => {
-			$('#siErrormessage').html("");
-			e.preventDefault();
-
-			const password = document.getElementById('si-password').value;
-			const email = document.getElementById('si-email').value;
-
-			$.ajax({
-				type: 'POST',
-				url: "http://localhost:3000/auth",
-				data: JSON.stringify({
-					"password": password,
-					"email": email
-				}),
-				error: function (e) {
-					$('#siErrormessage').html(e.responseText);
-					document.getElementById("signin").reset();
-					//$(".form-container").effect("shake");
-				},
-				success: function (e) {
-					$('#siErrormessage').html('Sign In successfull');
-					document.getElementById("signin").reset();
-				},
-				dataType: "json",
-				contentType: "application/json"
-			});
-			return false;
-		}
-
-	</script>
 
 </body>
 

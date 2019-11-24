@@ -85,6 +85,14 @@ html, body {
   background-color: #000033;
 }
 
+.big-container .error {
+  text-align: center;
+  color: red;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+
 .big-container .left-container {
   width: 50%;
   position: absolute;
@@ -185,14 +193,6 @@ html, body {
   background: -webkit-gradient(linear, left top, right top, from(#32D8AE), to(#7CFFCB));
   background: linear-gradient(to right, #32D8AE, #7CFFCB);
   cursor: pointer;
-}
-
-.big-container .right-container3 form .error {
-  text-align: center;
-  color: red;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  font-size: 12px;
 }
 
 .big-container .right-container3 form .signup {
