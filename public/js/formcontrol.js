@@ -7,7 +7,6 @@ function openForm1() {
 function openForm2() {
 	document.getElementById('right-container2').style.display = 'none';
 	document.getElementById('right-container3').style.display = 'flex';
-	$('#Errormessage').html("");
 }
 
 function openForm3() {
