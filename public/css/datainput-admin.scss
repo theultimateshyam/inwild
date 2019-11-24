@@ -4,6 +4,8 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	background: url('../assets/Background.svg') no-repeat center center fixed;
+	background-size: cover;
 }
 
 html,
@@ -13,7 +15,7 @@ body {
 
 .nav-bar {
 	overflow: hidden;
-	background-color: #000033;
+
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	display: flex;
@@ -61,7 +63,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	background-color: #000033;
 
 	.buttons {
 		position: absolute;
@@ -121,7 +122,7 @@ body {
 		height: 100%;
 		width: 95%;
 		left: 50%;
-		transform: translate(-50%, 0);
+		// transform: translate(-50%, 0);
 		display: flex;
 		flex-direction: row;
 		.left {
@@ -189,7 +190,13 @@ body {
 		}
 	}
 }
-
+.error {
+	text-align: center;
+	color: red;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	font-size: 12px;
+}
 footer {
 	width: 100%;
 	display: flex;
@@ -200,7 +207,7 @@ footer {
 	font-size: 1rem;
 	margin-top: 1px;
 	color: #f76c6c;
-	background-color: #000033;
+
 	p {
 		font-family: 'Raleway', sans-serif;
 		padding: 0 0.5rem;

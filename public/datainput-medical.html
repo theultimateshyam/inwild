@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" type="text/css" href="css/datainput-medical.css">
-
-
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" type="text/css" href="css/datainput-medical.css" />
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<title>Data-INWILD</title>
 </head>
 
@@ -21,76 +20,45 @@
 		</div>
 	</nav>
 
-	<main class="big-container">
+	<div class="wrapper">
 		<div class="buttons">
-			<button class="search-filter" onclick="location.href='datainput.html'">Animal</button>
-			<button class="medical" onclick="location.href='datainput-medical.html'">Medical</button>
-			<button class="admin" onclick="location.href='datainput-admin.html'">Admin</button>
+			<button class="button" onclick="location.href='datainput.html'">
+				Animal
+			</button>
+			<button class="button" onclick="location.href='datainput-medical.html'">
+				Medical
+			</button>
+			<button class="button" onclick="location.href='datainput-admin.html'">
+				Admin
+			</button>
 			<!-- <button class="data-input" onclick="location.href='datainput.html'">Data Input</button> -->
 		</div>
+		<div class="medical-form">
+			<h2>Medical Data Form</h2>
 
-		<div class="main-body">
-			<div class="left">
-				<h2><b>Medical Data Form</b></h2>
-				<form id="medicalform">
-					<h4>Animal ID</h4>
-					<input type="text" class="org" id="animalid" placeholder="Animal ID">
-					<h4>Diseases</h4>
-					<input type="text" class="org" id="diseases" placeholder="Diseases/Ailments">
-					<h4>Treatment</h4>
-					<input type="text" class="org" id="treatment" placeholder="Treatment">
-					<h4>General Health Description</h4>
-					<input type="text" class="org" id="description" placeholder="Description">
-					<input type="submit" class="submit" value="Enter">
-					<p id="message" class="error" style="color: red;"></p>
-				</form>
-			</div>
+			<form id="medicalform" onSubmit="performmedicalinput(); return false;">
+				<h4>Animal ID</h4>
+				<input type="text" class="org" id="animalid" placeholder="Animal ID" />
+				<h4>Diseases</h4>
+				<input type="text" class="org" id="diseases" placeholder="Diseases/Ailments" />
+				<h4>Treatment</h4>
+				<input type="text" class="org" id="treatment" placeholder="Treatment" />
+				<h4>General Health Description</h4>
+				<input type="text" class="org" id="description" placeholder="Description" />
+				<p id="message" class="error"></p>
+				<input type="submit" class="submit" value="Submit" />
+
+			</form>
 		</div>
+	</div>
 	</main>
 
 	<footer>
 		<p class="Copyright"><b>&copy;</b> designed by shyam & suchitte.</p>
 	</footer>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="js/search.js"></script>
+
+	<!-- <script src="js/search.js"></script> -->
+	<script src="js/medicalinput.js"></script>
 </body>
 
 </html>
-
-
-<script>
-	const medicalform = document.getElementById('medicalform');
-	medicalform.onsubmit = e => {
-		e.preventDefault();
-		const animalid = document.getElementById('animalid').value;
-		const diseases = document.getElementById('diseases').value;
-		const treatment = document.getElementById('treatment').value;
-		const description = document.getElementById('description').value;
-
-		$.ajax({
-			type: 'POST',
-			url: "http://localhost:3000/medical",
-			data: JSON.stringify({
-				"animalid": animalid,
-				"diseases": diseases,
-				"treatment": treatment,
-				"description": description
-
-			}),
-			error: function (e) {
-				$('#message').html(e.responseText);
-				medicalform.reset();
-				//$(".form-container").effect("shake");
-			},
-			success: function (e) {
-				$('#message').html("Successfully entered");
-				medicalform.reset();
-
-			},
-			dataType: "json",
-			contentType: "application/json"
-		});
-		return false;
-	}
-
-</script>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-access-denied">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="access-denied" clip-path="url(#clip-access-denied)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="1920" height="1080" fill="rgba(255,244,146,0.24)"/>
+    <g id="Group_2" data-name="Group 2" transform="translate(-2 8)">
+      <path id="Path_11" data-name="Path 11" d="M-14.211,249.474c6.316-4.737,454.738-276.317,454.738-276.317H857.371S129.474,427.9-14.211,450-14.211,249.474-14.211,249.474Z" fill="rgba(59,57,57,0.41)"/>
+      <path id="Path_12" data-name="Path 12" d="M1255.952-6.516-62.835,910.1l-24.007,261.889L52.4,1311.776s289.685-12.387,304.089-28.312S1664.072,101.425,1648.067-25.981,1255.952-6.516,1255.952-6.516Z" transform="translate(0 -149.667)" fill="rgba(59,57,57,0.41)"/>
+      <path id="Path_13" data-name="Path 13" d="M1795.269-41.053,994.74,1157.372s524.212-4.737,530.528-12.632S1935.8,238.422,1942.111,233.685s0-274.738,0-274.738Z" fill="rgba(59,57,57,0.41)"/>
+      <path id="Path_14" data-name="Path 14" d="M1940.532,560.528l-211.58,554.212h211.58Z" fill="rgba(59,57,57,0.41)"/>
+    </g>
+    <g id="Group_3" data-name="Group 3" transform="translate(65 -51.737)">
+      <g id="Group_1" data-name="Group 1" transform="translate(-63.906 -58.631)">
+        <path id="Path_1" data-name="Path 1" d="M866.781,644.224c9.5-6.372,51.23-17.9,116.8-22.272s121.8,45.169,149.57,8.712c50.592-66.407-5.262-123.51-37.279-115.338s-26.734,12.617-53.255-36.7c-79.882-148.541-149.113-6.99-151.776,0s-11.074,43.826-37.131,43.031c-25.2-.769-65.572,48.861-51.771,79.542a73.735,73.735,0,0,0,9.7,20.752c4.266,6.322,12.671,14.415,16.968,16.7,3.489,1.859,11.135,9.448,18.786,10.34C857.1,650.13,866.781,644.224,866.781,644.224Z" transform="translate(-22.724 151.912)"/>
+        <path id="Path_2" data-name="Path 2" d="M38.547.366C85.658,29.434,139.676,26.979,142,56.216c2.253,28.308-31.315,70.411-88.209,147C-24.32,308.377-.459,78.225,21.134,13.417,24.911,2.081,36.016-1.2,38.547.366Z" transform="matrix(-0.998, 0.07, -0.07, -0.998, 1130.763, 551.435)"/>
+        <path id="Path_3" data-name="Path 3" d="M43.662,217.464C97.024,189.976,158.209,192.3,160.843,164.65c2.552-26.769-35.47-66.583-99.912-139.01C-27.547-73.8-.52,143.837,23.938,205.122,28.216,215.841,40.794,218.941,43.662,217.464Z" transform="translate(836.912 306.031) rotate(17)"/>
+        <path id="Path_5" data-name="Path 5" d="M26.479.244C58.841,19.661,95.947,18.021,97.545,37.551c1.548,18.909-21.511,47.033-60.593,98.195C-16.706,205.989-.315,52.253,14.518,8.962,17.112,1.39,24.74-.8,26.479.244Z" transform="matrix(-0.982, -0.191, 0.191, -0.982, 1202.059, 669.711)"/>
+        <path id="Path_6" data-name="Path 6" d="M26.479,153.613c32.362-19.417,69.468-17.777,71.066-37.307C99.093,97.4,76.034,69.273,36.952,18.112-16.706-52.132-.315,101.6,14.518,144.895,17.112,152.467,24.74,154.657,26.479,153.613Z" transform="translate(684.709 518.911) rotate(-11)"/>
+        <path id="Path_7" data-name="Path 7" d="M846.493,110.74c-8.873-6.235,13.932-85.862,13.932-85.862l16.419,90.41S855.367,116.975,846.493,110.74Z" transform="translate(-5.999 218.491)"/>
+        <path id="Path_9" data-name="Path 9" d="M874.794,110.74c8.873-6.235-13.932-85.862-13.932-85.862l-16.419,90.41S865.921,116.975,874.794,110.74Z" transform="translate(229.242 225.26)"/>
+        <path id="Path_8" data-name="Path 8" d="M1.1,46.167C-3.669,42.814,8.593,0,8.593,0l8.829,48.612S5.873,49.519,1.1,46.167Z" transform="translate(678.906 479) rotate(-16)"/>
+        <path id="Path_10" data-name="Path 10" d="M1.1,2.557C-3.669,5.91,8.593,48.724,8.593,48.724L17.422.112S5.873-.8,1.1,2.557Z" transform="translate(1225.368 525.836) rotate(-164)"/>
+      </g>
+      <text id="_UHHO_YOU_SEEMED_TO_HAVE_ENTERED_UN-AUTHORISED_territory" data-name="
+
+UHHO YOU SEEMED TO HAVE ENTERED 
+UN-AUTHORISED territory" transform="translate(895 873)" stroke="#707070" stroke-width="1" font-size="30" font-family="RobotoSlab-Regular, Roboto Slab"><tspan x="0" y="0"></tspan><tspan x="0" y="39"></tspan><tspan x="-292.244" y="78">UHHO YOU SEEMED TO HAVE ENTERED </tspan><tspan x="-213.406" y="117">UN-AUTHORISED TERRITORY</tspan></text>
+      <text id="access_DENIED_401_" data-name="access DENIED 401 " transform="translate(553 854)" fill="#bb0606" stroke="#707070" stroke-width="1" font-size="69" font-family="RobotoSlab-Bold, Roboto Slab" font-weight="700"><tspan x="0" y="0">ACCESS DENIED 401 </tspan></text>
+    </g>
+  </g>
+</svg>

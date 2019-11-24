@@ -8,12 +8,13 @@
 
 html,
 body {
-	height: 100%;
+	background: url('../assets/Background.svg') no-repeat center center fixed;
+	background-size: cover;
+	font-family: 'raleway', sans-serif;
 }
 
 .nav-bar {
 	overflow: hidden;
-	background-color: #000033;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	display: flex;
@@ -54,136 +55,82 @@ body {
 	}
 }
 
-.big-container {
-	overflow: hidden;
-	font-family: 'raleway', sans-serif;
-	position: relative;
+.buttons {
+	padding-top: 1rem;
+	height: 4%;
 	display: flex;
-	flex-direction: column;
-	height: 100%;
-	background-color: #000033;
-
-	.buttons {
-		position: absolute;
-		left: 50%;
-		transform: translate(-50%, 0);
-		height: 4%;
-		display: flex;
-		flex-direction: row;
+	flex-direction: row;
+	justify-content: center;
+	.button {
 		padding: 2%;
-		.search-filter {
-			height: 2.3rem;
-			padding: 10px;
-			margin-right: 50px;
-			color: white;
-			background-color: transparent;
-			border-style: solid;
-			border-radius: 0.6rem;
-			cursor: pointer;
-			border-color: #9eed85;
-		}
-		.search-filter:hover {
-			border-color: white;
-		}
-		.medical {
-			height: 2.3rem;
-			padding: 10px;
-			margin-right: 50px;
-			color: white;
-			background-color: transparent;
-			border-style: solid;
-			border-radius: 0.6rem;
-			cursor: pointer;
-			border-color: #9eed85;
-		}
-		.medical:hover {
-			border-color: white;
-		}
-		.admin {
-			height: 2.3rem;
-			padding: 10px;
-			color: white;
-			background-color: transparent;
-			border-style: solid;
-			border-radius: 0.6rem;
-			cursor: pointer;
-			border-color: #9eed85;
-		}
-		.admin:hover {
-			border-color: white;
-		}
+		height: 2.3rem;
+		padding: 10px;
+		margin-right: 50px;
+		color: white;
+		background-color: transparent;
+		border-style: solid;
+		border-radius: 0.6rem;
+		cursor: pointer;
+		border-color: #9eed85;
 	}
+	.button:hover {
+		border-color: white;
+	}
+}
+.wrapper {
+	width: 30%;
+	margin: 0 auto;
+	text-align: center;
+}
+.medical-form {
+	padding: 2%;
 
-	.main-body {
-		//overflow-x: hidden;
-		position: relative;
-		margin-top: 7%;
-		height: 100%;
-		width: 95%;
-		left: 50%;
-		transform: translate(-50%, 0);
-		display: flex;
-		flex-direction: row;
-		.left {
-			display: flex;
-			flex-direction: column;
-			width: 40%;
-			position: absolute;
-			height: 90%;
-			left:50%;
-			transform: translate(-50%,0);
-			padding: 2%;
-			h2 {
-				color: white;
-			}
-			form {
-				margin-top: 20px;
-				margin-bottom: 20px;
-				height: auto;
-				width: auto;
-				h4 {
-					margin-top: 10px;
-					margin-bottom: 10px;
-					margin-left: 5%;
-					color: white;
-				}
-				input {
-					width: 90%;
-					height: 40px;
-					padding: 10px;
-					box-sizing: border-box;
-					margin-bottom: 15px;
-					letter-spacing: 1px;
-					border: 2px solid rgba(255, 255, 255, 0.4);
-					font-size: 15px;
-					border-radius: 20px;
-					text-align: center;
-					left: 50%;
-					position: relative;
-					background: rgba(136, 126, 126, 0.04);
-					transform: translate(-50%, 0);
-                    color: white;
-                }
-                
-				input[type='submit'] {
-					margin-top: 25px;
-					margin-bottom: 15px;
-					height: 40px;
-					color: #fff;
-					font-size: 14px;
-					width: 25%;
-					padding: none;
-					border: none;
-					text-align: center;
-					border-radius: 10px;
-					background: linear-gradient(to right, #32d8ae, #7cffcb);
-					cursor: pointer;
-				}
-			}
+	h2 {
+		color: white;
+		padding: 2rem;
+	}
+	form {
+		h4 {
+			text-align: left;
+			padding: 10px 0 10px 5px;
+			color: white;
+		}
+		input {
+			width: 100%;
+			height: 40px;
+			padding: 10px;
+			margin-bottom: 15px;
+			letter-spacing: 1px;
+			border: 2px solid rgba(255, 255, 255, 0.4);
+			font-size: 15px;
+			border-radius: 20px;
+			text-align: center;
+			background: rgba(136, 126, 126, 0.04);
+			color: white;
+		}
+
+		input[type='submit'] {
+			width: 25%;
+			margin: 25px 0 15px 0;
+			color: #fff;
+			font-size: 14px;
+			padding: none;
+			border: none;
+			text-align: center;
+			border-radius: 10px;
+			background: linear-gradient(to right, #32d8ae, #7cffcb);
+			cursor: pointer;
 		}
 	}
 }
 
+.error {
+	text-align: center;
+	color: red;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	font-size: 12px;
+}
 footer {
 	width: 100%;
 	display: flex;
@@ -194,7 +141,7 @@ footer {
 	font-size: 1rem;
 	margin-top: 1px;
 	color: #f76c6c;
-	background-color: #000033;
+
 	p {
 		font-family: 'Raleway', sans-serif;
 		padding: 0 0.5rem;

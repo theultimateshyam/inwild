@@ -2,15 +2,17 @@
 * {
   margin: 0;
   padding: 0;
+  background: url("../assets/Background.svg") no-repeat center center fixed;
+  background-size: cover;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
 .nav-bar {
   overflow: hidden;
-  background-color: #000033;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   display: -webkit-box;
@@ -62,7 +64,7 @@ html, body {
   text-decoration: none;
   padding: 0.75rem 0.75rem;
   display: block;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -82,7 +84,6 @@ html, body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  background-color: #000033;
 }
 
 .big-container .buttons {
@@ -230,7 +231,7 @@ html, body {
   color: white;
 }
 
-.big-container .main-body .left form input[type="submit"] {
+.big-container .main-body .left form input[type='submit'] {
   margin-top: 25px;
   margin-bottom: 15px;
   height: 40px;
@@ -241,8 +242,8 @@ html, body {
   border: none;
   text-align: center;
   border-radius: 10px;
-  background: -webkit-gradient(linear, left top, right top, from(#32D8AE), to(#7CFFCB));
-  background: linear-gradient(to right, #32D8AE, #7CFFCB);
+  background: -webkit-gradient(linear, left top, right top, from(#32d8ae), to(#7cffcb));
+  background: linear-gradient(to right, #32d8ae, #7cffcb);
   cursor: pointer;
 }
 
@@ -267,7 +268,7 @@ html, body {
 
 .big-container .main-body .right td {
   padding: 5px;
-  border: 1px solid #CBF3F0;
+  border: 1px solid #cbf3f0;
   color: white;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -285,8 +286,8 @@ html, body {
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  border-bottom: 2px solid #BA1200;
-  border-top: 2px solid #BA1200;
+  border-bottom: 2px solid #ba1200;
+  border-top: 2px solid #ba1200;
   color: white;
   height: 30px;
   max-height: 30px;
@@ -308,8 +309,7 @@ footer {
   padding-bottom: 0.8rem;
   font-size: 1rem;
   margin-top: 1px;
-  color: #F76C6C;
-  background-color: #000033;
+  color: #f76c6c;
 }
 
 footer p {

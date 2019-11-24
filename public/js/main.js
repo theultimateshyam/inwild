@@ -13,7 +13,11 @@ function performSigin() {
 		})
 		.catch(error => {
 			console.log(error.response);
-			restext.innerHTML = JSON.stringify(error.response.data);
+			let supstr = JSON.stringify(err.response.data);
+			supstr = supstr.replace(/[^ a-zA-Z0-9]/g, '');
+			supstr = supstr.replace('error', '');
+
+			restext.innerHTML = supstr;
 		});
 }
 

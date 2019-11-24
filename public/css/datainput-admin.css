@@ -4,6 +4,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background: url("../assets/Background.svg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 html,
@@ -13,7 +15,6 @@ body {
 
 .nav-bar {
   overflow: hidden;
-  background-color: #000033;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   display: -webkit-box;
@@ -85,7 +86,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  background-color: #000033;
 }
 
 .big-container .buttons {
@@ -157,8 +157,6 @@ body {
   height: 100%;
   width: 95%;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,6 +250,14 @@ body {
           flex-direction: column;
 }
 
+.error {
+  text-align: center;
+  color: red;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+
 footer {
   width: 100%;
   display: -webkit-box;
@@ -269,7 +275,6 @@ footer {
   font-size: 1rem;
   margin-top: 1px;
   color: #f76c6c;
-  background-color: #000033;
 }
 
 footer p {

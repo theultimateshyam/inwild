@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, validateUser } = require('../models/user');
 const auth = require('../middleware/auth');
 const adminauth = require('../middleware/adminauth');
-
+//
 router.post('/', [auth, adminauth], async (req, res) => {
 	try {
 		let user = await User.findOne({ email: req.body.email });

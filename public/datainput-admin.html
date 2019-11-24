@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="css/datainput-admin.css">
-
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 	<title>Data-INWILD</title>
 </head>
@@ -32,22 +32,22 @@
 		<div class="main-body">
 			<div class="left">
 				<h2><b>Admin Control Form</b></h2>
-				<form id="admincreate">
-					<h4>Officer Email-ID</h4>
+				<form id="officercreate" onSubmit="promoteuser(); return false;">
+					<h4>Enter E-mail ID of User to promote</h4>
 					<input type="text" class="org" id="email1" placeholder="Email ID">
 					<input type="submit" class="submit" value="Create Officer">
-					<p id="message1" class="error" style="color: red;"></p>
+					<p id="message1" class="error"></p>
 
 				</form>
 
 
 
-				<form id="admindelete">
-					<h4>Officer Email-ID</h4>
+				<form id="officerdelete" onSubmit="deleteuser(); return false;">
+					<h4>Enter E-mail ID of User to remove</h4>
 					<input type="text" class="org" id="email2" placeholder="Email ID">
 
 					<input type="submit" class="submit" value="Delete Officer">
-					<p id="message2" class="error" style="color: red;"></p>
+					<p id="message2" class="error"></p>
 				</form>
 			</div>
 		</div>
@@ -57,67 +57,9 @@
 	<footer>
 		<p class="Copyright"><b>&copy;</b> designed by shyam & suchitte.</p>
 	</footer>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="js/search.js"></script>
+	<script src="js/officerinput.js"></script>
+
+	<!-- <script src="js/search.js"></script> -->
 </body>
 
 </html>
-
-
-<script>
-	const admincreate = document.getElementById('admincreate');
-	admincreate.onsubmit = e => {
-		$('#message1').html("");
-		e.preventDefault();
-
-		const email = document.getElementById('email1').value;
-		$.ajax({
-			type: 'POST',
-			url: "http://localhost:3000/admincreate",
-			data: JSON.stringify({
-				"email": email
-			}),
-			error: function (e) {
-				$('#message1').html(e.responseText);
-				admincreate.reset();
-				//$(".form-container").effect("shake");
-			},
-			success: function (e) {
-				$('#message1').html('Created officer successfully ');
-				admincreate.reset();
-			},
-			dataType: "json",
-			contentType: "application/json"
-		});
-		return false;
-	}
-
-	const admindelete = document.getElementById('admindelete');
-	admindelete.onsubmit = e => {
-		$('#message2').html("");
-		e.preventDefault();
-
-		const email = document.getElementById('email2').value;
-
-		$.ajax({
-			type: 'POST',
-			url: "http://localhost:3000/admindelete",
-			data: JSON.stringify({
-				"email": email
-			}),
-			error: function (e) {
-				$('#message2').html(e.responseText);
-				admindelete.reset();
-				//$(".form-container").effect("shake");
-			},
-			success: function (e) {
-				$('#message2').html('Deleted Succeully');
-				admindelete.reset();
-			},
-			dataType: "json",
-			contentType: "application/json"
-		});
-		return false;
-	}
-
-</script>

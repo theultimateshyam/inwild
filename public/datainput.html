@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="css/datainput.css">
 
-
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<title>Data-INWILD</title>
 </head>
 
@@ -32,7 +32,7 @@
 		<div class="main-body">
 			<div class="left">
 				<h2><b>Animal Form</b></h2>
-				<form id="animalform">
+				<form id="animalform" onSubmit="performanimalinput(); return false;">
 					<h4>Animal ID</h4>
 					<input type="text" class="org" id="animalid" placeholder="Animal ID">
 					<h4>Animal Name</h4>
@@ -56,8 +56,8 @@
 					<h4>Limb Count</h4>
 					<input type="text" class="org" id="limbcount" placeholder="Limb Count">
 					<p id="message" class="error"></p>
-					<input type="submit" class="submit" value="Enter">
-					
+					<input type="submit" class="submit" value="Submit">
+
 				</form>
 			</div>
 		</div>
@@ -66,61 +66,13 @@
 	<footer>
 		<p class="Copyright"><b>&copy;</b> designed by shyam & suchitte.</p>
 	</footer>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="js/search.js"></script>
+
+	<!-- <script src="js/search.js"></script> -->
+	<script src="js/animalinput.js"></script>
 </body>
 
 </html>
 
-<script>
-	const animalform = document.getElementById('animalform');
-	animalform.onsubmit = e => {
-		e.preventDefault();
-		const animalid = document.getElementById('animalid').value;
-		const animalname = document.getElementById('animalname').value;
-		const genus = document.getElementById('genus').value;
-		const species = document.getElementById('species').value;
-		const weight = document.getElementById('weight').value;
-		const height = document.getElementById('height').value;
-		const length = document.getElementById('length').value;
-		const color = document.getElementById('color').value;
-		const age = document.getElementById('age').value;
-		const sex = document.getElementById('sex').value;
-		const limbcount = document.getElementById('limbcount').value;
 
-
-
-		$.ajax({
-			type: 'POST',
-			url: "http://localhost:3000/animalinput",
-			data: JSON.stringify({
-				"animalid": animalid,
-				"animalname": animalname,
-				"genus": genus,
-				"species": species,
-				"weight": weight,
-				"height": height,
-				"lengthh": length,
-				"color": color,
-				"age": age,
-				"sex": sex,
-				"limbcount": limbcount
-
-			}),
-			error: function (e) {
-				$('#message').html(e.responseText);
-				document.getElementById("animalform");
-				//$(".form-container").effect("shake");
-			},
-			success: function (e) {
-				$('#message').html('Successfully Entered');
-				document.getElementById("animalform").reset();
-
-			},
-			dataType: "json",
-			contentType: "application/json"
-		});
-		return false;
-	}
 
 </script>
