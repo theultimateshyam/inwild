@@ -171,6 +171,14 @@ html, body {
           transform: translate(-50%, 0);
 }
 
+.big-container .right-container3 form .error {
+  text-align: center;
+  color: red;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+
 .big-container .right-container3 form input[type="submit"] {
   margin-top: 25px;
   margin-bottom: 15px;
@@ -277,6 +285,14 @@ html, body {
   background: rgba(136, 126, 126, 0.04);
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
+}
+
+.big-container .right-container2 .form-container form .error {
+  text-align: center;
+  color: red;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-size: 12px;
 }
 
 .big-container .right-container2 .form-container form input[type="submit"] {

@@ -223,6 +223,14 @@ body {
   color: white;
 }
 
+.big-container .main-body .left form .error {
+  text-align: center;
+  color: red;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+
 .big-container .main-body .left form input[type='submit'] {
   margin-top: 25px;
   margin-bottom: 15px;

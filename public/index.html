@@ -28,8 +28,7 @@
 			<div class="first-container">
 				<div class="text-box1">
 					<h3>Protected Areas of India</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non a veritatis quos? Ut aperiam sequi
-						voluptatem,
+					<p>Protected areas are those in which human & animal occupation or at least the exploitation of resources is limited by rules & regulatins.
 
 					</p>
 				</div>
@@ -99,7 +98,7 @@
 					<input class="pass" id='si-password' type="password" name="password" placeholder="Password">
 
 					<input type="submit" class="submit" value="Sign In">
-					<p id="siErrormessage" class="error"></p>
+					<p id="Errormessage1" class="error"></p>
 					<p class="signup"><a href="#" onclick="openForm2()">To create an account, please Sign Up</a></p>
 
 				</form>
@@ -166,12 +165,12 @@
 					"email": email
 				}),
 				error: function (e) {
-					$('#siErrormessage').html(e.responseText);
+					$('#Errormessage1').html(e.responseText);
 					document.getElementById("signin").reset();
 					//$(".form-container").effect("shake");
 				},
 				success: function (e) {
-					$('#siErrormessage').html('Sign In successfull');
+					$('#Errormessage1').html('Sign In successfull');
 					document.getElementById("signin").reset();
 				},
 				dataType: "json",
