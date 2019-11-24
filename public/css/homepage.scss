@@ -137,6 +137,13 @@ html, body{
                   background: rgba(136, 126, 126, 0.04);
                   transform: translate(-50%,0);
               }
+              .error{
+                text-align: center;
+                color: red;
+                padding-top: 5px;
+                padding-bottom: 10px;
+                font-size: 12px;
+             }
               input[type="submit"]{
                   margin-top: 25px;
                   margin-bottom: 15px;
@@ -222,6 +229,13 @@ html, body{
                 position: relative;
                 background: rgba(136, 126, 126, 0.04);
                 transform: translate(-50%,0);
+            }
+            .error{
+                text-align: center;
+                color: red;
+                padding-top: 5px;
+                padding-bottom: 10px;
+                font-size: 12px;
             }
             input[type="submit"]{
                 margin-top: 25px;

@@ -55,8 +55,9 @@
 					<input type="text" class="org" id="sex" placeholder="Sex (M/F)">
 					<h4>Limb Count</h4>
 					<input type="text" class="org" id="limbcount" placeholder="Limb Count">
-					<input type="submit" class="submit" value="Enter">
 					<p id="message" class="error"></p>
+					<input type="submit" class="submit" value="Enter">
+					
 				</form>
 			</div>
 		</div>
@@ -107,8 +108,8 @@
 
 			}),
 			error: function (e) {
-				$('#message').html("Could not enter the data/possible duplicate exists");
-				document.getElementById("animalform").reset();
+				$('#message').html(e.responseText);
+				document.getElementById("animalform");
 				//$(".form-container").effect("shake");
 			},
 			success: function (e) {

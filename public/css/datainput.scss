@@ -164,6 +164,13 @@ body {
 					transform: translate(-50%, 0);
 					color: white;
 				}
+				.error{
+					text-align: center;
+					color: red;
+					padding-top: 5px;
+					padding-bottom: 10px;
+					font-size: 12px;
+				}
 				input[type='submit'] {
 					margin-top: 25px;
 					margin-bottom: 15px;
