@@ -4,7 +4,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -62,7 +63,7 @@ html, body {
   text-decoration: none;
   padding: 0.75rem 0.75rem;
   display: block;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -85,14 +86,6 @@ html, body {
   background-color: #000033;
 }
 
-.big-container .error {
-  text-align: center;
-  color: red;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  font-size: 12px;
-}
-
 .big-container .left-container {
   width: 50%;
   position: absolute;
@@ -107,6 +100,14 @@ html, body {
   left: 40%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.big-container .error {
+  text-align: center;
+  color: red;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-size: 12px;
 }
 
 .big-container .right-container3 {
@@ -132,7 +133,7 @@ html, body {
   max-width: 350px;
   margin: auto;
   padding: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 20px;
   -webkit-box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
           box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -152,7 +153,7 @@ html, body {
   margin-bottom: 30px;
   text-align: center;
   font-size: 20px;
-  color: #32D8AE;
+  color: #32d8ae;
   text-decoration: none;
 }
 
@@ -179,15 +180,7 @@ html, body {
           transform: translate(-50%, 0);
 }
 
-.big-container .right-container3 form .error {
-  text-align: center;
-  color: red;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  font-size: 12px;
-}
-
-.big-container .right-container3 form input[type="submit"] {
+.big-container .right-container3 form input[type='submit'] {
   margin-top: 25px;
   margin-bottom: 15px;
   height: 40px;
@@ -198,8 +191,8 @@ html, body {
   border: none;
   text-align: center;
   border-radius: 10px;
-  background: -webkit-gradient(linear, left top, right top, from(#32D8AE), to(#7CFFCB));
-  background: linear-gradient(to right, #32D8AE, #7CFFCB);
+  background: -webkit-gradient(linear, left top, right top, from(#32d8ae), to(#7cffcb));
+  background: linear-gradient(to right, #32d8ae, #7cffcb);
   cursor: pointer;
 }
 
@@ -242,7 +235,7 @@ html, body {
   max-width: 350px;
   margin: auto;
   padding: 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 20px;
   -webkit-box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
           box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -261,7 +254,7 @@ html, body {
   margin-bottom: 30px;
   text-align: center;
   font-size: 20px;
-  color: #32D8AE;
+  color: #32d8ae;
 }
 
 .big-container .right-container2 .form-container form {
@@ -287,15 +280,7 @@ html, body {
           transform: translate(-50%, 0);
 }
 
-.big-container .right-container2 .form-container form .error {
-  text-align: center;
-  color: red;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  font-size: 12px;
-}
-
-.big-container .right-container2 .form-container form input[type="submit"] {
+.big-container .right-container2 .form-container form input[type='submit'] {
   margin-top: 25px;
   margin-bottom: 15px;
   height: 40px;
@@ -306,8 +291,8 @@ html, body {
   border: none;
   text-align: center;
   border-radius: 10px;
-  background: -webkit-gradient(linear, left top, right top, from(#32D8AE), to(#7CFFCB));
-  background: linear-gradient(to right, #32D8AE, #7CFFCB);
+  background: -webkit-gradient(linear, left top, right top, from(#32d8ae), to(#7cffcb));
+  background: linear-gradient(to right, #32d8ae, #7cffcb);
   cursor: pointer;
 }
 
@@ -381,7 +366,7 @@ html, body {
 }
 
 .big-container .right-container1 .first-container .text-box1 h3 {
-  color: #F7C4A5;
+  color: #f7c4a5;
   padding-bottom: 2px;
 }
 
@@ -428,7 +413,7 @@ html, body {
 }
 
 .big-container .right-container1 .second-container .text-box2 h3 {
-  color: #CBF3F0;
+  color: #cbf3f0;
   padding-bottom: 2px;
 }
 
@@ -475,7 +460,7 @@ html, body {
 }
 
 .big-container .right-container1 .third-container .text-box3 h3 {
-  color: #BA1200;
+  color: #ba1200;
   padding-bottom: 2px;
 }
 
@@ -523,7 +508,7 @@ html, body {
 }
 
 .big-container .right-container1 .fourth-container .text-box4 h3 {
-  color: #B388EB;
+  color: #b388eb;
   padding-bottom: 2px;
 }
 
@@ -555,7 +540,7 @@ footer {
   padding-bottom: 0.8rem;
   font-size: 1rem;
   margin-top: 1px;
-  color: #F76C6C;
+  color: #f76c6c;
   background-color: #000033;
 }
 
