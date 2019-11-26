@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="css/dbstats.css">
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	<title>Data-INWILD</title>
+</head>
+
+<body>
+	<nav class="nav-bar">
+		<a href="index.html" class="logo">INWILD.</a>
+		<div class="menu-items">
+			<a href="explorepage.html" class="LT">Explore</a>
+			<a href="datapage.html" class="LT">Data</a>
+			<a class="LT" onclick="">Login/Sign Up</a>
+		</div>
+	</nav>
+
+	<main class="wrapper">
+        <h2>Statistics</h2>
+        <h3 id="num_animal">Number of Animals : </h3>
+        <h3 id="num_animalcat">Number of Animal Categories : </h3>
+        <h3 id="num_reporters">Number of Active Reporters : </h3>
+        <h3 id="num_users">Number of INWILD Users : </h3>
+	</main>
+
+	<footer>
+		<p class="Copyright"><b>&copy;</b> designed by shyam & suchitte.</p>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+
+	<script src="js/dbstats.js"></script>
+</body>
+
+</html>
