@@ -3,13 +3,14 @@
 * {
 	margin: 0;
 	padding: 0;
-	background: url('../assets/Background.svg') no-repeat center center fixed;
-	background-size: cover;
+	
 }
 
 html,
 body {
 	height: 100%;
+	background: url('../assets/Background.svg') no-repeat center center fixed;
+	background-size: cover;
 }
 
 .nav-bar {
@@ -204,11 +205,12 @@ body {
 				left: 50%;
 				transform: translate(-50%, 0);
 				border-style: none;
+				background-color: #ffffff;
 			}
 			td {
 				padding: 5px;
 				border: 1px solid #cbf3f0;
-				color: white;
+				color: black;
 				user-select: none;
 				height: 20px;
 				max-height: 20px;
@@ -223,7 +225,7 @@ body {
 				border-bottom-right-radius: 5px;
 				border-bottom: 2px solid #ba1200;
 				border-top: 2px solid #ba1200;
-				color: white;
+				color: black;
 				height: 30px;
 				max-height: 30px;
 			}

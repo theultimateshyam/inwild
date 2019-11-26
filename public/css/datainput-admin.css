@@ -74,37 +74,23 @@ body {
   border-bottom: 2px solid #9eed85;
 }
 
-.big-container {
-  overflow: hidden;
+.wrapper {
   font-family: 'raleway', sans-serif;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.big-container .buttons {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+.buttons {
+  display: flexbox;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   height: 4%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding: 2%;
 }
 
-.big-container .buttons .search-filter {
+.buttons .button {
   height: 2.3rem;
   padding: 10px;
   margin-right: 50px;
@@ -116,121 +102,44 @@ body {
   border-color: #9eed85;
 }
 
-.big-container .buttons .search-filter:hover {
+.buttons .button:hover {
   border-color: white;
 }
 
-.big-container .buttons .medical {
-  height: 2.3rem;
-  padding: 10px;
-  margin-right: 50px;
+.container {
+  padding: 2rem;
+}
+
+.container h2 {
   color: white;
-  background-color: transparent;
-  border-style: solid;
-  border-radius: 0.6rem;
-  cursor: pointer;
-  border-color: #9eed85;
+  padding: 2rem;
 }
 
-.big-container .buttons .medical:hover {
-  border-color: white;
-}
-
-.big-container .buttons .admin {
-  height: 2.3rem;
-  padding: 10px;
-  color: white;
-  background-color: transparent;
-  border-style: solid;
-  border-radius: 0.6rem;
-  cursor: pointer;
-  border-color: #9eed85;
-}
-
-.big-container .buttons .admin:hover {
-  border-color: white;
-}
-
-.big-container .main-body {
-  position: relative;
-  margin-top: 7%;
-  height: 100%;
-  width: 95%;
-  left: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.big-container .main-body .left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 40%;
-  position: absolute;
-  height: 90%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  padding: 2%;
-}
-
-.big-container .main-body .left h2 {
+.container form h4 {
+  text-align: left;
+  padding: 10px 0 10px 5px;
   color: white;
 }
 
-.big-container .main-body .left form {
-  border: 1px solid white;
-  border-radius: 1em;
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  height: auto;
-  width: auto;
-}
-
-.big-container .main-body .left form h4 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 5%;
-  color: white;
-}
-
-.big-container .main-body .left form input {
+.container form input {
   width: 90%;
   height: 40px;
   padding: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   margin-bottom: 15px;
   letter-spacing: 1px;
   border: 2px solid rgba(255, 255, 255, 0.4);
   font-size: 15px;
   border-radius: 20px;
   text-align: center;
-  left: 50%;
-  position: relative;
   background: rgba(136, 126, 126, 0.04);
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
   color: white;
 }
 
-.big-container .main-body .left form .submit {
-  margin-top: 25px;
-  margin-bottom: 5px;
-  height: 40px;
+.container form input[type='submit'] {
+  width: 25%;
+  margin: 25px 0 15px 0;
   color: #fff;
   font-size: 14px;
-  width: 28%;
   padding: none;
   border: none;
   text-align: center;
@@ -240,14 +149,9 @@ body {
   cursor: pointer;
 }
 
-.big-container .main-body .left form .button-grp {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.forms {
+  border-radius: 20px;
+  margin: 0 0 3rem 0;
 }
 
 .error {

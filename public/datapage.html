@@ -7,7 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="css/datapage.css">
 
-
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 	<title>Data-INWILD</title>
 </head>
 
@@ -23,18 +25,18 @@
 
 	<main class="big-container">
 		<div class="buttons">
-			<button class="search-filter" onclick="location.href='datapage.html'">Search/Filter</button>
+			
 			<button class="statistics">Database Statistics</button>
-			<button class="download">Download Data</button>
+			<button class="download" onclick="downloadpdf()">Download Data</button>
 			<button class="data-input" onclick="location.href='datainput.html'">Data Input</button>
 		</div>
 
 		<div class="main-body">
 			<div class="left">
 				<h2><b>Search</b></h2>
-				<form id="search-form">
+				<form id="search-form" onSubmit="getdata(); return false;" >
 					<h4>Animal</h4>
-					<input class="org" name="AnimalName" placeholder="Animal Name*" required>
+					<input class="org" id="animalname"name="AnimalName" placeholder="Animal Name*" required>
 					<h4>Attribute: LimbCount</h4>
 					<input class="org" name="LimbCount" placeholder="Organisation Name">
 					<h4>Diseases</h4>
@@ -54,6 +56,8 @@
 		<p class="Copyright"><b>&copy;</b> designed by shyam & suchitte.</p>
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+
 	<script src="js/search.js"></script>
 </body>
 

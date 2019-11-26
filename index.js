@@ -9,6 +9,7 @@ const medical = require('./routes/medical');
 const animalinput = require('./routes/animalinput');
 const officercreate = require('./routes/officercreate');
 const officerdelete = require('./routes/officerdelete');
+const data = require('./routes/data');
 require('dotenv').config();
 
 const app = express();
@@ -43,4 +44,5 @@ app.use('/animalinput', animalinput);
 app.use('/medical', medical);
 app.use('/officercreate', officercreate);
 app.use('/officerdelete', officerdelete);
+app.use('/data',data);
 const port = process.env.port || 3000;

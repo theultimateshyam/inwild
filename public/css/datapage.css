@@ -2,13 +2,13 @@
 * {
   margin: 0;
   padding: 0;
-  background: url("../assets/Background.svg") no-repeat center center fixed;
-  background-size: cover;
 }
 
 html,
 body {
   height: 100%;
+  background: url("../assets/Background.svg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 .nav-bar {
@@ -264,12 +264,13 @@ body {
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   border-style: none;
+  background-color: #ffffff;
 }
 
 .big-container .main-body .right td {
   padding: 5px;
   border: 1px solid #cbf3f0;
-  color: white;
+  color: black;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -288,7 +289,7 @@ body {
   border-bottom-right-radius: 5px;
   border-bottom: 2px solid #ba1200;
   border-top: 2px solid #ba1200;
-  color: white;
+  color: black;
   height: 30px;
   max-height: 30px;
 }

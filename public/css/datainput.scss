@@ -9,11 +9,13 @@
 html,
 body {
 	height: 100%;
+	background: url('../assets/Background.svg') no-repeat center center fixed;
+	background-size: cover;
 }
 
 .nav-bar {
 	overflow: hidden;
-	background-color: #000033;
+	 
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	display: flex;
@@ -61,7 +63,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 180%;
-	background-color: #000033;
+	 
 
 	.buttons {
 		position: absolute;
@@ -200,7 +202,7 @@ footer {
 	font-size: 1rem;
 	margin-top: 1px;
 	color: #f76c6c;
-	background-color: #000033;
+	 
 	p {
 		font-family: 'Raleway', sans-serif;
 		padding: 0 0.5rem;

@@ -5,59 +5,76 @@
 //  { "col_2": "val_22", "col_3": "val_23" }, 
 //     { "col_1": "val_31", "col_3": "val_33" } 
 // ];    
-       
-$("#search-form").submit(function(){
-    var fd = $(this).serializeArray();
+       // Builds the HTML Table out of myList.
 
-    $.post('/',fd,function(result){
-        list = result;
-    })
+var myList;
+var data=[];
 
-    return false;
-})
-
-function constructTable(selector) { 
-        
-    $(selector).empty();
-    // Getting the all column names 
-    var cols = Headers(list, selector);   
-
-    // Traversing the JSON data 
-    for (var i = 0; i < list.length; i++) { 
-        var row = $('<tr/>');    
-        for (var colIndex = 0; colIndex < cols.length; colIndex++) 
-        { 
-            var val = list[i][cols[colIndex]]; 
-                
-            // If there is any key, which is matching 
-            // with the column name 
-            if (val == null) val = "";   
-                row.append($('<td/>').html(val)); 
-        } 
-            
-        // Adding each row to the table 
-        $(selector).append(row);
-    } 
-} 
+async function getdata(){
+  const animalname = document.getElementById('animalname').value;
+  await axios.post('/data',{
+    animalname : animalname
+  }).then(response => {
+    myList = response.data;
+    console.log(myList);
     
-function Headers(list, selector) { 
-    var columns = []; 
-    var header = $('<tr/>'); 
-        
-    for (var i = 0; i < list.length; i++) { 
-        var row = list[i]; 
-            
-        for (var k in row) { 
-            if ($.inArray(k, columns) == -1) { 
-                columns.push(k); 
-                    
-                // Creating the header 
-                header.append($('<th/>').html(k)); 
-            } 
-        } 
-    } 
-        
-    // Appending the header to the table 
-    $(selector).append(header); 
-        return columns; 
-} 
+    
+    buildHtmlTable("#table");
+  })
+  .catch(err=>{
+    console.log(err);
+  })
+  
+}
+function buildHtmlTable(selector) {
+    $(selector).empty();
+    var columns = addAllColumnHeaders(myList, selector);
+  
+    for (var i = 0; i < myList.length; i++) {
+      var row$ = $('<tr/>');
+      for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+        var cellValue = myList[i][columns[colIndex]];
+        if (cellValue == null) cellValue = "";
+        row$.append($('<td/>').html(cellValue));
+      }
+      $(selector).append(row$);
+    }
+  }
+  
+  // Adds a header row to the table and returns the set of columns.
+  // Need to do union of keys from all records as some records may not contain
+  // all records.
+  function addAllColumnHeaders(myList, selector) {
+    var columnSet = [];
+    var headerTr$ = $('<tr/>');
+  
+    for (var i = 0; i < myList.length; i++) {
+      var rowHash = myList[i];
+      for (var key in rowHash) {
+        if ($.inArray(key, columnSet) == -1) {
+          columnSet.push(key);
+          headerTr$.append($('<th/>').html(key));
+        }
+      }
+    }
+    $(selector).append(headerTr$);
+  
+    return columnSet;
+  }
+
+
+  function downloadpdf() {
+   
+    html2canvas(document.getElementById('table'), {
+        onrendered: function (canvas) {
+            var data = canvas.toDataURL();
+            var docDefinition = {
+                content: [{
+                    image: data,
+                    width: 500
+                }]
+            };
+            pdfMake.createPdf(docDefinition).download("Table.pdf");
+        }
+    });
+}
