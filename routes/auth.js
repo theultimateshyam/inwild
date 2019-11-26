@@ -24,8 +24,18 @@ router.post('/', async (req, res) => {
 		return res.status(400).send({ error: 'Invalid User name or Password' });
 
 	const token = user.generateAuthToken();
-	res.cookie('AuthToken', token, { httpOnly: true })
-		.header('x-auth-token', token)
+	res.cookie('AuthToken', token, {
+		expires: new Date(Date.now() + 900000),
+		httpOnly: true
+	});
+
+	res.cookie('username', user.name, {
+		expires: new Date(Date.now() + 900000),
+		httpOnly: true
+	});
+
+	res.header('x-auth-token', token)
+
 		.send(user._id)
 		.status(200);
 });
