@@ -35,6 +35,6 @@ function performanimalinput() {
 			supstr = supstr.replace(/[^ a-zA-Z0-9]/g, '');
 			supstr = supstr.replace('error', '');
 
-			message.innerHTML = supstr;
+			message.innerHTML = supstr[0:10];
 		});
 }

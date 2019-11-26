@@ -21,6 +21,7 @@ router.post('/', [auth, officerauth], (req, res) => {
 
 function validatemedicalform(medical) {
 	const schema = Joi.object({
+		animalid:Joi.number().required(),
 		diseases: Joi.string().required(),
 		treatment: Joi.string().required(),
 		description: Joi.string().required()
