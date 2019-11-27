@@ -31,9 +31,18 @@ function performanimalinput() {
 		})
 		.catch(err => {
 			console.log(err.response);
-			let supstr = JSON.stringify(err.response.data);
-			supstr = supstr.replace(/[^ a-zA-Z0-9]/g, '');
-			supstr = supstr.replace('error', '');
+			let supstr;
+			if (err.response.data['error']['sqlMessage']) {
+				supstr = JSON.stringify(
+					err.response.data['error']['sqlMessage']
+				);
+				supstr = supstr.replace(/[^ a-zA-Z0-9]/g, '');
+				supstr = supstr.replace('error', '');
+			} else {
+				supstr = JSON.stringify(err.response.data['error']);
+				supstr = supstr.replace(/[^ a-zA-Z0-9]/g, '');
+				supstr = supstr.replace('error', '');
+			}
 
 			message.innerHTML = supstr;
 		});

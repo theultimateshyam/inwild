@@ -16,6 +16,7 @@ function performSigin() {
 			restext.style.color = 'green';
 		})
 		.catch(error => {
+			console.log(error.response.data['error']);
 			console.log(error.response);
 			let supstr = JSON.stringify(error.response.data);
 			supstr = supstr.replace(/[^ a-zA-Z0-9]/g, '');
