@@ -58,7 +58,7 @@ body {
 
 .wrapper{
     font-family: 'raleway', sans-serif;
-    width: 30%;
+    width: 70%;
 	margin: 0 auto;
     text-align: center;
     height: 100%;
@@ -72,6 +72,37 @@ body {
         padding: 2rem;
         font-size: 15px;
     }
+}
+
+.card{
+	background-color: #ffffff;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+	transition: 0.3s;
+	margin: 30px 20px;
+	border-radius: 15px;
+	.container {
+		padding: 1px 15px;
+	}
+	img{
+		width: 50%;
+	}
+	h3{
+		color:#32d8ae;
+		font-size: 60px;
+	}
+	.st{
+		font-size: 20px;
+	}
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 #32d8ae;
+  }
+
+.card-holder{
+	display: flex;
+	justify-content: space-between;
+
 }
 
 footer {
