@@ -1,6 +1,18 @@
 async function getdata() {
 	let endval = 50;
 	let durationtime = 2000;
+	if (sessionStorage.getItem('status') != null) {
+		const welcome = document.getElementById('welcome');
+		const signout = document.getElementById('signout');
+		const login = document.getElementById('login');
+		let x = document.cookie;
+		x = x.replace('username=', '');
+		welcome.innerHTML = `Welcome, ${x}`;
+		login.style.display = 'none';
+		signout.style.display = 'block';
+		// login.style.display = 'hidden';
+	}
+
 	await axios
 		.get('/stats', {})
 		.then(response => {

@@ -10,6 +10,11 @@ function checkloguser() {
 		signout.style.display = 'block';
 		// login.style.display = 'hidden';
 	}
+	if (sessionStorage.getItem('secondtime') != null) {
+		document.getElementById('right-container1').style.display = 'none';
+		document.getElementById('right-container3').style.display = 'none';
+		document.getElementById('right-container2').style.display = 'flex';
+	}
 }
 
 function signout() {
@@ -20,7 +25,6 @@ function signout() {
 function performSigin() {
 	if (sessionStorage.getItem('status') != null) {
 		window.alert('Already signed in');
-
 		window.location.href = '/index.html';
 	} else {
 		//show validation message

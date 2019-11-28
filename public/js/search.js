@@ -9,37 +9,50 @@
 var myList;
 var data = [];
 function checkloguser() {
-	if (sessionStorage.getItem('status') == null) {
-		window.alert('You have to be signed-in inorder to access this page');
-		window.location.href = 'index.html';
-		return false;
+	if (sessionStorage.getItem('status') != null) {
+		const welcome = document.getElementById('welcome');
+		const signout = document.getElementById('signout');
+		const login = document.getElementById('login');
+		let x = document.cookie;
+		x = x.replace('username=', '');
+		welcome.innerHTML = `Welcome, ${x}`;
+		login.style.display = 'none';
+		signout.style.display = 'block';
+		// login.style.display = 'hidden';
 	}
 }
 async function getdata() {
-	const animalname = document.getElementById('animalname').value;
-	const color = document.getElementById('color').value;
-	const sex = document.getElementById('sex').value;
-	$('#table').empty();
+	if (sessionStorage.getItem('status') == null) {
+		window.alert('You have to be signed-in inorder to access this page');
+		sessionStorage.setItem('secondtime', 'Yes');
+		window.location.href = 'index.html';
+		return false;
+	} else {
+		const animalname = document.getElementById('animalname').value;
+		const color = document.getElementById('color').value;
+		const sex = document.getElementById('sex').value;
+		$('#table').empty();
 
-	await axios
-		.post('/data', {
-			animalname: animalname,
-			color: color,
-			sex: sex
-		})
-		.then(response => {
-			myList = response.data;
-			if (!(Array.isArray(myList) && myList.length)) {
-				window.alert('404, no results found');
-			}
-			// 	// console.log(myList);
-			else {
-				buildHtmlTable('#table');
-			}
-		})
-		.catch(err => {
-			console.log(err);
-		});
+		await axios
+			.post('/data', {
+				animalname: animalname,
+				color: color,
+				sex: sex
+			})
+			.then(response => {
+				myList = response.data;
+				if (!(Array.isArray(myList) && myList.length)) {
+					window.alert('404, no results found');
+				}
+				// 	// console.log(myList);
+				else {
+					buildHtmlTable('#table');
+				}
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	}
 }
 function buildHtmlTable(selector) {
 	$(selector).empty();

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Kanit:700|Raleway:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kanit:700|Rock+Salt|Raleway:500&display=swap');
 
 * {
 	margin: 0;
@@ -30,7 +30,6 @@ body {
 		font-size: 1.5rem;
 		text-decoration: none;
 		color: #9eed85;
-		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	}
 
 	.menu-items {
@@ -62,79 +61,75 @@ body {
 	width: 30%;
 	margin: 0 auto;
 	text-align: center;
-
 }
 
 .buttons {
-		display: flexbox;
-		flex-direction: row;
-		height: 4%;
-		.button{
-			height: 2.3rem;
+	display: flexbox;
+	flex-direction: row;
+	height: 4%;
+	.button {
+		height: 2.3rem;
+		padding: 10px;
+		margin-right: 50px;
+		color: white;
+		background-color: transparent;
+		border-style: solid;
+		border-radius: 0.6rem;
+		cursor: pointer;
+		border-color: #9eed85;
+	}
+	.button:hover {
+		border-color: white;
+	}
+}
+
+.container {
+	padding: 2rem;
+	h2 {
+		color: white;
+		padding: 2rem;
+	}
+	form {
+		h4 {
+			text-align: left;
+			padding: 10px 0 10px 5px;
+			color: white;
+		}
+		input {
+			width: 90%;
+			height: 40px;
 			padding: 10px;
-			margin-right: 50px;
+			margin-bottom: 15px;
+			letter-spacing: 1px;
+			border: 2px solid rgba(255, 255, 255, 0.4);
+			font-size: 15px;
+			border-radius: 20px;
+			text-align: center;
+			background: rgba(136, 126, 126, 0.04);
 			color: white;
-			background-color: transparent;
-			border-style: solid;
-			border-radius: 0.6rem;
+		}
+
+		input[type='submit'] {
+			width: 25%;
+			margin: 25px 0 15px 0;
+			color: #fff;
+			font-size: 14px;
+			padding: none;
+			border: none;
+			text-align: center;
+			border-radius: 10px;
+			background: linear-gradient(to right, #32d8ae, #7cffcb);
 			cursor: pointer;
-			border-color: #9eed85;
 		}
-		.button:hover{
-			border-color: white;
-		}
-		
 	}
+}
 
-	.container {
-		padding:2rem;
-		h2 {
-			color: white;
-			padding: 2rem;
-		}
-		form {
-			
-			
-			h4 {
-				text-align: left;
-				padding: 10px 0 10px 5px;
-				color: white;
-			}
-			input {
-				width: 90%;
-				height: 40px;
-				padding: 10px;
-				margin-bottom: 15px;
-				letter-spacing: 1px;
-				border: 2px solid rgba(255, 255, 255, 0.4);
-				font-size: 15px;
-				border-radius: 20px;
-				text-align: center;
-				background: rgba(136, 126, 126, 0.04);
-				color: white;
-			}
-	
-			input[type='submit'] {
-				width: 25%;
-				margin: 25px 0 15px 0;
-				color: #fff;
-				font-size: 14px;
-				padding: none;
-				border: none;
-				text-align: center;
-				border-radius: 10px;
-				background: linear-gradient(to right, #32d8ae, #7cffcb);
-				cursor: pointer;
-			}
-		}
-	}
+.forms {
+	border-radius: 20px;
+	// border: 2px solid white;
 
-	.forms{
-		border-radius: 20px;
-		// border: 2px solid white;
-		
-		margin: 0 0 3rem 0;
-	}
+	margin: 0 0 3rem 0;
+}
 // 		.left {
 // 			display: flex;
 // 			flex-direction: column;
@@ -205,15 +200,15 @@ footer {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	
+
 	justify-content: center;
 	padding-top: 1rem;
 	padding-bottom: 0.8rem;
 	font-size: 1rem;
 	margin-top: 1px;
 	color: #f76c6c;
-	p{
-		font-family: 'Roboto',sans-serif;
+	p {
+		font-family: 'Roboto', sans-serif;
 	}
 	.signn {
 		font-family: 'Rock Salt', cursive;

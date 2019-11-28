@@ -10,13 +10,16 @@
 	<title>Data-INWILD</title>
 </head>
 
-<body>
+<body onload="checkloguser()">
 	<nav class="nav-bar">
 		<a href="index.html" class="logo">INWILD.</a>
 		<div class="menu-items">
 			<a href="datapage.html" class="LT">Data</a>
 			<a href="dbstats.html" class="LT">Statistics</a>
-			<a class="LT" href="index.html">Login/Sign Up</a>
+			<p id='welcome' class="LT"></p>
+			<a class="LT" id="login" onclick="openForm1()">Login/Sign Up</a>
+			<a href="index.html" id='signout' onclick="signout()" class="LT">Sign out</a>
+
 		</div>
 	</nav>
 
@@ -54,7 +57,7 @@
 	</main>
 
 	<footer>
-			<p class="Copyright"><b>&copy;</b> designed by <span class="signn">shyam & suchitte.</span></p>
+		<p class="Copyright"><b>&copy;</b> designed by <span class="signn">shyam & suchitte.</span></p>
 	</footer>
 
 	<!-- <script src="js/search.js"></script> -->
