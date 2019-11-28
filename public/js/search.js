@@ -19,6 +19,8 @@ async function getdata() {
 	const animalname = document.getElementById('animalname').value;
 	const color = document.getElementById('color').value;
 	const sex = document.getElementById('sex').value;
+	$('#table').empty();
+
 	await axios
 		.post('/data', {
 			animalname: animalname,
