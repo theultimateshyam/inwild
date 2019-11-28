@@ -38,6 +38,8 @@ body {
   font-size: 1.5rem;
   text-decoration: none;
   color: #9eed85;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-bar .menu-items {
@@ -156,7 +158,11 @@ footer {
 }
 
 footer p {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto',sans-serif;
+}
+
+footer .signn {
+  font-family: 'Rock Salt', cursive;
   padding: 0 0.5rem;
 }
 /*# sourceMappingURL=dbstats.css.map */

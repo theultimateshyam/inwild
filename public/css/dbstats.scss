@@ -29,6 +29,7 @@ body {
 		font-size: 1.5rem;
 		text-decoration: none;
 		color: #9eed85;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	}
 
 	.menu-items {
@@ -110,15 +111,18 @@ footer {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+	
 	justify-content: center;
 	padding-top: 1rem;
 	padding-bottom: 0.8rem;
 	font-size: 1rem;
 	margin-top: 1px;
 	color: #f76c6c;
-
-	p {
-		font-family: 'Raleway', sans-serif;
+	p{
+		font-family: 'Roboto',sans-serif;
+	}
+	.signn {
+		font-family: 'Rock Salt', cursive;
 		padding: 0 0.5rem;
 	}
 }
