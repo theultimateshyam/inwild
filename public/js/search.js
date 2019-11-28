@@ -27,10 +27,13 @@ async function getdata() {
 		})
 		.then(response => {
 			myList = response.data;
-			if (myList.e)
-				// console.log(myList);
-
+			if (!(Array.isArray(myList) && myList.length)) {
+				window.alert('404, no results found');
+			}
+			// 	// console.log(myList);
+			else {
 				buildHtmlTable('#table');
+			}
 		})
 		.catch(err => {
 			console.log(err);
