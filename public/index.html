@@ -10,13 +10,17 @@
 	<title>INWILD</title>
 </head>
 
-<body>
+<body onload="checkloguser()">
 	<nav class="nav-bar">
 		<a href="index.html" class="logo">INWILD.</a>
+
 		<div class="menu-items">
 			<a href="datapage.html" class="LT">Data</a>
 			<a href="dbstats.html" class="LT">Statistics</a>
+			<p id='welcome' class="LT"></p>
 			<a class="LT" id="login" onclick="openForm1()">Login/Sign Up</a>
+			<a href="index.html" id='signout' onclick="signout()" class="LT">Sign out</a>
+
 		</div>
 	</nav>
 
@@ -28,7 +32,7 @@
 			<div class="first-container">
 				<div class="text-box1">
 					<h3>Protected Areas of India</h3>
-					<p>As in May 2012, the protected areas of India cover 156,700 square kilometres (60,500 sq mi), 
+					<p>As in May 2012, the protected areas of India cover 156,700 square kilometres (60,500 sq mi),
 						roughly 4.95% of the total surface area.
 					</p>
 				</div>
@@ -39,7 +43,7 @@
 			<div class="second-container">
 				<div class="text-box2">
 					<h3>Popular Statistics</h3>
-					<p>India, a megadiverse country, accounts for 7-8% of all recorded species, 
+					<p>India, a megadiverse country, accounts for 7-8% of all recorded species,
 						including over 91,000 species of animals.
 					</p>
 				</div>
@@ -60,7 +64,8 @@
 			<div class="fourth-container">
 				<div class="text-box4">
 					<h3>Public Outreach</h3>
-					<p>Downloadable formats of data to facilitate knowlege spread among wildlife enthusiasts, encouraging
+					<p>Downloadable formats of data to facilitate knowlege spread among wildlife enthusiasts,
+						encouraging
 						potential research breakthroughs.
 					</p>
 				</div>

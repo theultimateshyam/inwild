@@ -30,8 +30,8 @@ router.post('/', async (req, res) => {
 	});
 
 	res.cookie('username', user.name, {
-		expires: new Date(Date.now() + 900000),
-		httpOnly: true
+		expires: new Date(Date.now() + 900000)
+		// httpOnly: true
 	});
 
 	res.header('x-auth-token', token)

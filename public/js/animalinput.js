@@ -1,3 +1,11 @@
+function checkloguser() {
+	console.log('HERE');
+	if (sessionStorage.getItem('status') == null) {
+		window.alert('You have to be signed-in inorder to access this page');
+		window.location.href = 'index.html';
+		return false;
+	}
+}
 function performanimalinput() {
 	const message = document.getElementById('message');
 	const animalid = document.getElementById('animalid').value;

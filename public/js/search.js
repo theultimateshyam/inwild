@@ -8,7 +8,14 @@
 
 var myList;
 var data = [];
-
+function checkloguser() {
+	console.log('HERE');
+	if (sessionStorage.getItem('status') == null) {
+		window.alert('You have to be signed-in inorder to access this page');
+		window.location.href = 'index.html';
+		return false;
+	}
+}
 async function getdata() {
 	const animalname = document.getElementById('animalname').value;
 	const color = document.getElementById('color').value;
