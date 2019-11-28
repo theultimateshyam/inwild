@@ -9,7 +9,6 @@
 var myList;
 var data = [];
 function checkloguser() {
-	console.log('HERE');
 	if (sessionStorage.getItem('status') == null) {
 		window.alert('You have to be signed-in inorder to access this page');
 		window.location.href = 'index.html';
@@ -28,9 +27,10 @@ async function getdata() {
 		})
 		.then(response => {
 			myList = response.data;
-			// console.log(myList);
+			if (myList.e)
+				// console.log(myList);
 
-			buildHtmlTable('#table');
+				buildHtmlTable('#table');
 		})
 		.catch(err => {
 			console.log(err);
