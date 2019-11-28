@@ -74,7 +74,7 @@ body {
 
 .wrapper {
   font-family: 'raleway', sans-serif;
-  width: 30%;
+  width: 70%;
   margin: 0 auto;
   text-align: center;
   height: 100%;
@@ -90,6 +90,47 @@ body {
   color: white;
   padding: 2rem;
   font-size: 15px;
+}
+
+.card {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 30px 20px;
+  border-radius: 15px;
+}
+
+.card .container {
+  padding: 1px 15px;
+}
+
+.card img {
+  width: 50%;
+}
+
+.card h3 {
+  color: #32d8ae;
+  font-size: 60px;
+}
+
+.card .st {
+  font-size: 20px;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 8px 16px 0 #32d8ae;
+          box-shadow: 0 8px 16px 0 #32d8ae;
+}
+
+.card-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 footer {
