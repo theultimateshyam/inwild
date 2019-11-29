@@ -10,30 +10,41 @@ router.get('/', auth, async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-	const { error } = validateUser(req.body);
+	try {
+		const { error } = validateUser(req.body);
 
-	if (error) return res.status(400).send({ error: error.details[0].message });
+		if (error)
+			return res.status(400).send({ error: error.details[0].message });
 
-	let user = await User.findOne({ email: req.body.email });
+		let user = await User.findOne({ email: req.body.email });
 
-	if (user) return res.status(400).send({ error: 'User already exists ' });
+		if (user)
+			return res.status(400).send({ error: 'User already exists ' });
 
-	const salt = await bcrypt.genSalt(10);
-	const hashed_password = await bcrypt.hash(req.body.password, salt);
+		const salt = await bcrypt.genSalt(10);
+		const hashed_password = await bcrypt.hash(req.body.password, salt);
 
-	const newuser = new User({
-		name: req.body.name,
-		email: req.body.email,
-		password: hashed_password,
-		username: req.body.username,
-		designation: 'explorer'
-	});
-	await newuser.save();
+		const newuser = new User({
+			name: req.body.name,
+			email: req.body.email,
+			password: hashed_password,
+			// username: req.body.username,
+			designation: req.body.designation
+		});
+		await newuser.save();
 
-	const token = user.generateAuthToken();
-	res.cookie('AuthToken', token, { httpOnly: true })
-		.header('x-auth-token', token)
-		.send(_.pick(newuser, ['_id', 'isAdmin', 'name']));
+		const token = newuser.generateAuthToken();
+		res.cookie('username', newuser.name, {
+			expires: new Date(Date.now() + 900000)
+			// httpOnly: true
+		});
+		res.cookie('AuthToken', token, { httpOnly: true })
+			.header('x-auth-token', token)
+			.send(_.pick(newuser, ['_id', 'isAdmin', 'name']));
+	} catch (err) {
+		console.log(err);
+		res.send(err);
+	}
 });
 
 module.exports = router;

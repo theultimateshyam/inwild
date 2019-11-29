@@ -16,11 +16,11 @@ const UsersSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	username: {
-		type: String,
-		required: true,
-		unique: true
-	},
+	// username: {
+	// 	type: String,
+	// 	required: true,
+	// 	unique: true
+	// },
 	designation: {
 		type: String,
 		required: true
@@ -42,11 +42,11 @@ function validateUser(user) {
 
 		email: Joi.string().email({ tlds: { allow: ['com', 'net', 'in'] } }),
 		password: Joi.string(),
-		designation: Joi.string().required(),
-		username: Joi.string()
-			.min(5)
-			.max(50)
-			.required()
+		designation: Joi.string().required()
+		// username: Joi.string()
+		// 	.min(5)
+		// 	.max(50)
+		// 	.required()
 	});
 	return schema.validate(user);
 }

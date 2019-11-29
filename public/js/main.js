@@ -25,6 +25,7 @@ function signout() {
 function performSigin() {
 	if (sessionStorage.getItem('status') != null) {
 		window.alert('Already signed in');
+		sessionStorage.setItem('secondtime', 'Yes');
 		window.location.href = '/index.html';
 	} else {
 		//show validation message
@@ -49,6 +50,7 @@ function performSigin() {
 				restext.style.color = 'green';
 				login.style.display = 'none';
 				signout.style.display = 'block';
+				sessionStorage.setItem('secondtime', 'Yes');
 				window.location.href = 'index.html';
 			})
 			.catch(error => {
@@ -65,11 +67,9 @@ function performSigin() {
 
 function performSigup() {
 	const name = document.getElementById('su-name').value;
-	const username = document.getElementById('su-username').value;
+	// const username = document.getElementById('su-username').value;
 	const password = document.getElementById('su-password').value;
 	const email = document.getElementById('su-email').value;
-	let designation = document.getElementById('su-designation').value;
-	designation = designation.toLowerCase();
 	const restext = document.getElementById('response-su-message');
 	const welcome = document.getElementById('welcome');
 	const login = document.getElementById('login');
@@ -78,13 +78,14 @@ function performSigup() {
 		.post('http://localhost:3000/users', {
 			name: name,
 			password: password,
-			username: username,
-			designation: designation,
+			// username: username,
+			designation: 'explorer',
 			email: email
 		})
 		.then(response => {
+			sessionStorage.setItem('secondtime', 'Yes');
 			console.log(response);
-			window.alert = 'SigUp Successfull';
+			window.alert('SigUp Successfull');
 			sessionStorage.setItem('status', 'loggedIn');
 			let x = document.cookie;
 			x = x.replace('username=', '');
@@ -99,7 +100,6 @@ function performSigup() {
 			let supstr = JSON.stringify(err.response.data);
 			supstr = supstr.replace(/[^ a-zA-Z0-9]/g, '');
 			supstr = supstr.replace('error', '');
-
 			restext.innerHTML = supstr;
 		});
 }
