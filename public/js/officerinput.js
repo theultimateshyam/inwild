@@ -1,3 +1,15 @@
+function login() {
+	sessionStorage.setItem('secondtime', 'Yes');
+	window.location.href = 'index.html';
+	return false;
+}
+
+function signout() {
+	sessionStorage.clear();
+	window.alert('Signed out');
+	window.location.href = 'index.html';
+}
+
 function checkloguser() {
 	if (sessionStorage.getItem('status') != null) {
 		const welcome = document.getElementById('welcome');
@@ -33,6 +45,7 @@ function promoteuser() {
 			.then(response => {
 				console.log(response);
 				message1.innerHTML = 'Promoted User';
+				message.style.color = 'green';
 			})
 			.catch(err => {
 				console.log(err.response);
@@ -61,6 +74,7 @@ function deleteuser() {
 			.then(response => {
 				console.log(response);
 				message2.innerHTML = 'User removed from Database';
+				message2.style.color = 'green';
 			})
 			.catch(err => {
 				console.log(err.response);

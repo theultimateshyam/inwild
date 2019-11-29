@@ -11,29 +11,22 @@ router.get('/', (req, res) => {
 		result_fin.push(result[0]['COUNT(*)']);
 		pool.query(
 			` SELECT count(DISTINCT animal.species) from animal;`,
-			(err, result) => {
+			async (err, result) => {
 				if (err) {
 					return res.status(400).send({ error: err });
 				}
 
 				result_fin.push(result[0]['count(DISTINCT animal.species)']);
-				pool.query(
-					`SELECT count(DISTINCT reports.reportername) from reports; `,
-					async (err, result) => {
-						if (err) {
-							return res.status(400).send({ error: err });
-						}
-						result_fin.push(
-							result[0]['count(DISTINCT reports.reportername)']
-						);
 
-						const users = await User.countDocuments();
-						// console.log(users);
-						result_fin.push(users);
+				const officials = await User.count({ designation: 'officer' });
+				result_fin.push(officials);
+				console.log(officials);
+				const users = await User.countDocuments();
 
-						res.send(result_fin);
-					}
-				);
+				// console.log(users);
+				result_fin.push(users);
+				console.log(result_fin);
+				res.send(result_fin);
 			}
 		);
 	});

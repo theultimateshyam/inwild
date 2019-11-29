@@ -13,6 +13,10 @@ body {
   background-size: cover;
 }
 
+#signout {
+  display: none;
+}
+
 .nav-bar {
   overflow: hidden;
   padding-top: 0.5rem;

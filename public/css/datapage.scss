@@ -11,7 +11,9 @@ body {
 	background: url('../assets/Background.svg') no-repeat center center fixed;
 	background-size: cover;
 }
-
+#signout {
+	display: none;
+}
 .nav-bar {
 	overflow: hidden;
 

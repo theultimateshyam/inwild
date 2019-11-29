@@ -1,3 +1,15 @@
+function login() {
+	sessionStorage.setItem('secondtime', 'Yes');
+	window.location.href = 'index.html';
+	return false;
+}
+
+function signout() {
+	sessionStorage.clear();
+	window.alert('Signed out');
+	window.location.href = 'index.html';
+}
+
 function checkloguser() {
 	if (sessionStorage.getItem('status') != null) {
 		const welcome = document.getElementById('welcome');
@@ -48,6 +60,7 @@ function performanimalinput() {
 			.then(response => {
 				console.log(response);
 				message.innerHTML = 'Successfully Recorded';
+				message.style.color = 'green';
 			})
 			.catch(err => {
 				console.log(err.response);
