@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
 		email: req.body.email,
 		password: hashed_password,
 		username: req.body.username,
-		designation: req.body.designation
+		designation: 'explorer'
 	});
 	await newuser.save();
 

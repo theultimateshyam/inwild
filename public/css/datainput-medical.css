@@ -13,6 +13,10 @@ body {
   font-family: 'raleway', sans-serif;
 }
 
+#signout {
+  display: none;
+}
+
 .nav-bar {
   overflow: hidden;
   padding-top: 0.5rem;

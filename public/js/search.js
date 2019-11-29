@@ -1,13 +1,17 @@
-// var list=[result];
-// var list = [
-//    { "col_1": "val_11", "col_3": "val_13" },
-//  { "col_2": "val_22", "col_3": "val_23" },
-//     { "col_1": "val_31", "col_3": "val_33" }
-// ];
-// Builds the HTML Table out of myList.
-
 var myList;
 var data = [];
+
+function login() {
+	sessionStorage.setItem('secondtime', 'Yes');
+	window.location.href = 'index.html';
+	return false;
+}
+function signout() {
+	sessionStorage.clear();
+	window.alert('Signed out');
+	window.location.href = 'index.html';
+}
+
 function checkloguser() {
 	if (sessionStorage.getItem('status') != null) {
 		const welcome = document.getElementById('welcome');

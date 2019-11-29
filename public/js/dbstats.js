@@ -1,3 +1,15 @@
+function login() {
+	sessionStorage.setItem('secondtime', 'Yes');
+	window.location.href = 'index.html';
+	return false;
+}
+
+function signout() {
+	sessionStorage.clear();
+	window.alert('Signed out');
+	window.location.href = 'index.html';
+}
+
 async function getdata() {
 	let endval = 50;
 	let durationtime = 2000;
