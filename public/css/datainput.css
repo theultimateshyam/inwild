@@ -89,7 +89,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 180%;
+  height: auto;
 }
 
 .big-container .buttons {
@@ -158,18 +158,8 @@ body {
 .big-container .main-body {
   position: relative;
   margin-top: 7%;
-  height: 100%;
-  width: 95%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  height: auto;
+  width: 100%;
 }
 
 .big-container .main-body .left {
@@ -181,16 +171,20 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 40%;
-  position: absolute;
-  height: 90%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  position: relative;
+  height: auto;
+  margin: 0 auto;
   padding: 2%;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
 .big-container .main-body .left h2 {
-  color: white;
+  color: #32d8ae;
+  margin: 0 auto;
 }
 
 .big-container .main-body .left form {
@@ -203,8 +197,7 @@ body {
 .big-container .main-body .left form h4 {
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 5%;
-  color: white;
+  color: black;
 }
 
 .big-container .main-body .left form input {
@@ -215,16 +208,13 @@ body {
           box-sizing: border-box;
   margin-bottom: 15px;
   letter-spacing: 1px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(0, 0, 0, 0.1);
   font-size: 15px;
   border-radius: 20px;
   text-align: center;
-  left: 50%;
   position: relative;
   background: rgba(136, 126, 126, 0.04);
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  color: white;
+  color: black;
 }
 
 .big-container .main-body .left form .error {
