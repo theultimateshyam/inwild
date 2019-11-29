@@ -45,7 +45,7 @@ function promoteuser() {
 			.then(response => {
 				console.log(response);
 				message1.innerHTML = 'Promoted User';
-				message.style.color = 'green';
+				message1.style.color = 'green';
 			})
 			.catch(err => {
 				console.log(err.response);

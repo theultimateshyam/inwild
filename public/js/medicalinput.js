@@ -51,11 +51,7 @@ function performmedicalinput() {
 				console.log(err.response);
 				let supstr;
 				if (err.response.data['error']['sqlMessage']) {
-					supstr = JSON.stringify(
-						err.response.data['error']['sqlMessage']
-					);
-					supstr = supstr.replace(/[^ a-zA-Z0-9]/g, '');
-					supstr = supstr.replace('error', '');
+					supstr = 'Can not record, please check animal id again';
 				} else {
 					supstr = JSON.stringify(err.response.data['error']);
 					supstr = supstr.replace(/[^ a-zA-Z0-9]/g, '');

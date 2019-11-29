@@ -4,6 +4,7 @@ function checkloguser() {
 		const signout = document.getElementById('signout');
 		const login = document.getElementById('login');
 		let x = document.cookie;
+		console.log(x);
 		x = x.replace('username=', '');
 		welcome.innerHTML = `Welcome, ${x}`;
 		login.style.display = 'none';
@@ -44,13 +45,13 @@ function performSigin() {
 				// console.log(response);
 				window.alert = 'Sigin Successfull';
 				sessionStorage.setItem('status', 'loggedIn');
+				sessionStorage.setItem('secondtime', 'Yes');
 				let x = document.cookie;
 				x = x.replace('username=', '');
 				welcome.innerHTML = `Welcome, ${x}`;
 				restext.style.color = 'green';
 				login.style.display = 'none';
 				signout.style.display = 'block';
-				sessionStorage.setItem('secondtime', 'Yes');
 				window.location.href = 'index.html';
 			})
 			.catch(error => {
