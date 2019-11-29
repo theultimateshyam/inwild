@@ -22,7 +22,7 @@ router.post('/', auth, (req, res) => {
 		//
 		console.log(11);
 		pool.query(
-			`SELECT * FROM animal inner join attributes on animal.AnimalID = attributes.AnimalID where animal.Name = \"${req.body.animalname}\" and attributes.Sex = \"${req.body.sex}\" `,
+			` select animal.AnimalID,Name,Genus,Species,Weight,Age,Color,Height,Length,Sex,Limbcount from animal inner  join (attributes inner  join attribanimal on attribanimal.AttributeID = attributes.AttributeID) on animal.AnimalID = attribanimal.AnimalID where animal.Name = \"${req.body.animalname}\" and attributes.Sex = \"${req.body.sex}\" `,
 			(err, result) => {
 				if (err) {
 					return res.status(400).send({ error: err });
@@ -35,7 +35,7 @@ router.post('/', auth, (req, res) => {
 		console.log(req.body);
 		console.log(122);
 		pool.query(
-			`SELECT * FROM animal inner join attributes on animal.AnimalID = attributes.AnimalID where animal.Name = \"${req.body.animalname}\" and attributes.Color = \"${req.body.color}\" `,
+			` select animal.AnimalID,Name,Genus,Species,Weight,Age,Color,Height,Length,Sex,Limbcount from animal inner  join (attributes inner  join attribanimal on attribanimal.AttributeID = attributes.AttributeID) on animal.AnimalID = attribanimal.AnimalID where animal.Name = \"${req.body.animalname}\" and attributes.Color = \"${req.body.color}\" `,
 			(err, result) => {
 				if (err) {
 					return res.status(400).send({ error: err });
@@ -48,7 +48,7 @@ router.post('/', auth, (req, res) => {
 		// where animal.Name = \"${req.body.animalname}\" attribute.sex = \"${req.body.sex}\"
 
 		pool.query(
-			`SELECT * FROM animal inner join attributes on animal.AnimalID = attributes.AnimalID where animal.Name = \"${req.body.animalname}\" and attribute.color = \"${req.body.color} and attribute.sex = \"${req.body.sex}\" `,
+			` select animal.AnimalID,Name,Genus,Species,Weight,Age,Color,Height,Length,Sex,Limbcount from animal inner  join (attributes inner  join attribanimal on attribanimal.AttributeID = attributes.AttributeID) on animal.AnimalID = attribanimal.AnimalID where animal.Name = \"${req.body.animalname}\" and attributes.Color = \"${req.body.color}\" and attributes.sex = \"${req.body.sex}\" `,
 			(err, result) => {
 				if (err) {
 					return res.status(400).send({ error: err });
